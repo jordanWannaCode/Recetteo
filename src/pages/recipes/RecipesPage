@@ -1,0 +1,346 @@
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { recipeService } from '../../services/api';
+import { useAuth } from '../../context/AuthContext';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  Box,
+  Container,
+  Typography,
+  Button,
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  CardActions,
+  IconButton,
+  TextField,
+  InputAdornment,
+  CircularProgress,
+  Chip,
+  Menu,
+  MenuItem,
+  Paper,
+  Badge
+} from '@mui/material';
+import {
+  Add,
+  Search,
+  FilterList,
+  Sort,
+  Favorite,
+  FavoriteBorder,
+  AccessTime,
+  Restaurant,
+  Edit
+} from '@mui/icons-material';
+
+// Define placeholder image path correctly
+const PLACEHOLDER_IMAGE = '/recipe-placeholder.jpg';
+
+const RecipesPage = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filterAnchorEl, setFilterAnchorEl] = useState(null);
+  const [sortAnchorEl, setSortAnchorEl] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('Tous');
+  const [sortBy, setSortBy] = useState('recent');
+
+  const categories = ['Tous', 'Entrées', 'Plats', 'Desserts', 'Boissons', 'Favoris'];
+  const sortOptions = [
+    { value: 'recent', label: 'Plus récentes' },
+    { value: 'oldest', label: 'Plus anciennes' },
+    { value: 'az', label: 'A-Z' },
+    { value: 'za', label: 'Z-A' }
+  ];
+
+  useEffect(() => {
+    const fetchRecipes = async () => {
+      try {
+        setLoading(true);
+        const response = await recipeService.getAll();
+        setRecipes(response.data.recettes || []);
+      } catch (error) {
+        console.error('Failed to fetch recipes', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRecipes();
+  }, []);
+
+  const handleFilterOpen = (event) => {
+    setFilterAnchorEl(event.currentTarget);
+  };
+
+  const handleFilterClose = () => {
+    setFilterAnchorEl(null);
+  };
+
+  const handleSortOpen = (event) => {
+    setSortAnchorEl(event.currentTarget);
+  };
+
+  const handleSortClose = () => {
+    setSortAnchorEl(null);
+  };
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    handleFilterClose();
+  };
+
+  const handleSortSelect = (sort) => {
+    setSortBy(sort);
+    handleSortClose();
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleAddRecipe = () => {
+    navigate('/recettes/nouvelle');
+  };
+
+  const handleEditRecipe = (id) => {
+    navigate(`/recettes/${id}/modifier`);
+  };
+
+  const toggleFavorite = async (id) => {
+    try {
+      const updatedRecipes = recipes.map(recipe =>
+        recipe.id === id ? { ...recipe, isFavorite: !recipe.isFavorite } : recipe
+      );
+      setRecipes(updatedRecipes);
+    } catch (error) {
+      console.error('Failed to toggle favorite', error);
+    }
+  };
+
+  const filteredRecipes = recipes.filter(recipe => {
+    const matchesSearch = recipe.nom.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'Tous' || 
+                          (selectedCategory === 'Favoris' ? recipe.isFavorite : recipe.categorie === selectedCategory);
+    return matchesSearch && matchesCategory;
+  });
+
+  const sortedRecipes = [...filteredRecipes].sort((a, b) => {
+    switch (sortBy) {
+      case 'az':
+        return a.nom.localeCompare(b.nom);
+      case 'za':
+        return b.nom.localeCompare(a.nom);
+      case 'recent':
+        return new Date(b.date_creation) - new Date(a.date_creation);
+      case 'oldest':
+        return new Date(a.date_creation) - new Date(b.date_creation);
+      default:
+        return 0;
+    }
+  });
+
+  if (loading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', py: 8 }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  return (
+    <Container maxWidth="lg" sx={{ py: 4 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
+        <Typography variant="h4" component="h1" sx={{ fontWeight: 700 }}>
+          Mes Recettes
+        </Typography>
+        <Button
+          variant="contained"
+          startIcon={<Add />}
+          onClick={handleAddRecipe}
+        >
+          Nouvelle Recette
+        </Button>
+      </Box>
+
+      <Box sx={{ display: 'flex', mb: 4, gap: 2, flexWrap: 'wrap' }}>
+        <TextField
+          fullWidth
+          variant="outlined"
+          placeholder="Rechercher une recette..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Search />
+              </InputAdornment>
+            ),
+          }}
+        />
+
+        <Button
+          variant="outlined"
+          startIcon={<FilterList />}
+          onClick={handleFilterOpen}
+        >
+          {selectedCategory}
+        </Button>
+        <Menu
+          anchorEl={filterAnchorEl}
+          open={Boolean(filterAnchorEl)}
+          onClose={handleFilterClose}
+        >
+          {categories.map((category) => (
+            <MenuItem
+              key={category}
+              onClick={() => handleCategorySelect(category)}
+              selected={selectedCategory === category}
+            >
+              {category}
+            </MenuItem>
+          ))}
+        </Menu>
+
+        <Button
+          variant="outlined"
+          startIcon={<Sort />}
+          onClick={handleSortOpen}
+        >
+          Trier
+        </Button>
+        <Menu
+          anchorEl={sortAnchorEl}
+          open={Boolean(sortAnchorEl)}
+          onClose={handleSortClose}
+        >
+          {sortOptions.map((option) => (
+            <MenuItem
+              key={option.value}
+              onClick={() => handleSortSelect(option.value)}
+              selected={sortBy === option.value}
+            >
+              {option.label}
+            </MenuItem>
+          ))}
+        </Menu>
+      </Box>
+
+      {sortedRecipes.length === 0 ? (
+        <Box sx={{ 
+          textAlign: 'center', 
+          py: 8, 
+          backgroundColor: 'background.paper',
+          borderRadius: 2,
+          border: '1px dashed',
+          borderColor: 'divider'
+        }}>
+          <Restaurant sx={{ fontSize: 60, color: 'text.secondary', mb: 2 }} />
+          <Typography variant="h6" color="text.secondary" sx={{ mb: 2 }}>
+            Aucune recette trouvée
+          </Typography>
+          <Button 
+            variant="contained" 
+            startIcon={<Add />}
+            onClick={handleAddRecipe}
+          >
+            Ajouter une recette
+          </Button>
+        </Box>
+      ) : (
+        <Grid container spacing={3}>
+          <AnimatePresence>
+            {sortedRecipes.map((recipe) => (
+              <Grid item xs={12} sm={6} md={4} key={recipe.id}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  whileHover={{ scale: 1.03 }}
+                >
+                  <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={recipe.image || PLACEHOLDER_IMAGE}
+                      alt={recipe.nom}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = PLACEHOLDER_IMAGE;
+                      }}
+                      sx={{
+                        objectFit: 'cover',
+                        backgroundColor: 'background.default'
+                      }}
+                    />
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Typography variant="h6" gutterBottom>
+                          {recipe.nom}
+                        </Typography>
+                        <IconButton
+                          size="small"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleFavorite(recipe.id);
+                          }}
+                        >
+                          {recipe.isFavorite ? (
+                            <Favorite color="error" />
+                          ) : (
+                            <FavoriteBorder />
+                          )}
+                        </IconButton>
+                      </Box>
+                      
+                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        <AccessTime fontSize="small" sx={{ mr: 1, color: 'text.secondary' }} />
+                        <Typography variant="body2" color="text.secondary">
+                          {recipe.temps_preparation + (recipe.temps_cuisson || 0)} min
+                        </Typography>
+                      </Box>
+                      
+                      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                        {recipe.description?.length > 100
+                          ? `${recipe.description.substring(0, 100)}...`
+                          : recipe.description || 'Aucune description'}
+                      </Typography>
+                      
+                      {recipe.categorie && (
+                        <Chip
+                          label={recipe.categorie}
+                          size="small"
+                          color="primary"
+                          sx={{ mr: 1 }}
+                        />
+                      )}
+                    </CardContent>
+                    <CardActions sx={{ justifyContent: 'flex-end' }}>
+                      {user?.id === recipe.utilisateur_id && (
+                        <IconButton
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleEditRecipe(recipe.id);
+                          }}
+                        >
+                          <Edit fontSize="small" />
+                        </IconButton>
+                      )}
+                    </CardActions>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))}
+          </AnimatePresence>
+        </Grid>
+      )}
+    </Container>
+  );
+};
+
+export default RecipesPage;

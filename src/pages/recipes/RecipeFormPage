@@ -1,0 +1,344 @@
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { recipeService, ingredientService } from '../../../services/api';
+import { useAuth } from '../../../context/AuthContext';
+import { motion } from 'framer-motion';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import {
+  Box, Container, Typography, Button, Grid, TextField, Card, CardContent,
+  CardHeader, Divider, Chip, IconButton, Tooltip, Autocomplete, FormControlLabel,
+  Switch, FormGroup, Paper, Stack, CircularProgress
+} from '@mui/material';
+import { Add, Delete, Save, ArrowBack } from '@mui/icons-material';
+
+const schema = yup.object().shape({
+  nom: yup.string().required('Le nom est requis').max(120),
+  description: yup.string().required('La description est requise'),
+  temps_preparation: yup.number().required().positive().integer(),
+  temps_cuisson: yup.number().required().min(0).integer(),
+  est_publique: yup.boolean(),
+  ingredients: yup.array().of(
+    yup.object().shape({
+      id: yup.number().required(),
+      quantite: yup.number().required().positive(),
+    })
+  ).min(1, 'Au moins un ingrédient est requis'),
+});
+
+const RecipeFormPage = ({ edit = false }) => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const [ingredients, setIngredients] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
+  
+  const { control, handleSubmit, formState: { errors }, setValue, watch, reset } = useForm({
+    resolver: yupResolver(schema),
+    defaultValues: {
+      nom: '',
+      description: '',
+      temps_preparation: 0,
+      temps_cuisson: 0,
+      est_publique: false,
+      ingredients: [],
+    }
+  });
+
+  const recipeIngredients = watch('ingredients');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Charger la liste des ingrédients
+        const ingredientsResponse = await ingredientService.getAll();
+        setIngredients(ingredientsResponse.data);
+        
+        // Si en mode édition, charger la recette existante
+        if (edit && id) {
+          const recipeResponse = await recipeService.getById(id);
+          const recipe = recipeResponse.data;
+          
+          // Vérifier que l'utilisateur est l'auteur
+          if (recipe.utilisateur_id !== user?.id) {
+            navigate('/recettes');
+            return;
+          }
+          
+          // Pré-remplir le formulaire
+          reset({
+            nom: recipe.nom,
+            description: recipe.description,
+            temps_preparation: recipe.temps_preparation,
+            temps_cuisson: recipe.temps_cuisson,
+            est_publique: recipe.est_publique,
+            ingredients: recipe.ingredients.map(ing => ({
+              id: ing.id,
+              quantite: ing.quantite,
+              nom: ing.nom,
+              unite: ing.unite
+            }))
+          });
+        }
+      } catch (error) {
+        console.error('Failed to fetch data', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    fetchData();
+  }, [edit, id, reset, user, navigate]);
+
+  const onSubmit = async (data) => {
+    try {
+      setSubmitting(true);
+      
+      // Formater les données pour l'API
+      const formattedData = {
+        ...data,
+        ingredients: data.ingredients.map(ing => ({
+          id: ing.id,
+          quantite: ing.quantite
+        }))
+      };
+      
+      if (edit && id) {
+        await recipeService.update(id, formattedData);
+      } else {
+        await recipeService.create(formattedData);
+      }
+      
+      navigate('/recettes');
+    } catch (error) {
+      console.error('Failed to submit recipe', error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleAddIngredient = (ingredient) => {
+    if (!ingredient || recipeIngredients.some(i => i.id === ingredient.id)) return;
+    
+    setValue('ingredients', [
+      ...recipeIngredients,
+      {
+        id: ingredient.id,
+        nom: ingredient.nom,
+        unite: ingredient.unite,
+        quantite: 1
+      }
+    ]);
+  };
+
+  const handleRemoveIngredient = (ingredientId) => {
+    setValue('ingredients', recipeIngredients.filter(i => i.id !== ingredientId));
+  };
+
+  const handleQuantityChange = (ingredientId, value) => {
+    setValue('ingredients', recipeIngredients.map(i => 
+      i.id === ingredientId ? { ...i, quantite: value } : i
+    ));
+  };
+
+  if (loading) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
+        <CircularProgress />
+      </Box>
+    );
+  }
+
+  return (
+    <Container maxWidth="lg" sx={{ py: 4 }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+          <IconButton onClick={() => navigate('/recettes')} sx={{ mr: 1 }}>
+            <ArrowBack />
+          </IconButton>
+          <Typography variant="h4" component="h1" sx={{ fontWeight: 700 }}>
+            {edit ? 'Modifier la recette' : 'Nouvelle recette'}
+          </Typography>
+        </Box>
+        
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={8}>
+              <Card>
+                <CardHeader title="Informations de base" />
+                <CardContent>
+                  <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                      <Controller
+                        name="nom"
+                        control={control}
+                        render={({ field }) => (
+                          <TextField
+                            {...field}
+                            fullWidth
+                            label="Nom de la recette"
+                            error={!!errors.nom}
+                            helperText={errors.nom?.message}
+                          />
+                        )}
+                      />
+                    </Grid>
+                    
+                    <Grid item xs={12}>
+                      <Controller
+                        name="description"
+                        control={control}
+                        render={({ field }) => (
+                          <TextField
+                            {...field}
+                            fullWidth
+                            multiline
+                            rows={4}
+                            label="Description"
+                            error={!!errors.description}
+                            helperText={errors.description?.message}
+                          />
+                        )}
+                      />
+                    </Grid>
+                    
+                    <Grid item xs={12} sm={6}>
+                      <Controller
+                        name="temps_preparation"
+                        control={control}
+                        render={({ field }) => (
+                          <TextField
+                            {...field}
+                            fullWidth
+                            type="number"
+                            label="Temps de préparation (minutes)"
+                            error={!!errors.temps_preparation}
+                            helperText={errors.temps_preparation?.message}
+                          />
+                        )}
+                      />
+                    </Grid>
+                    
+                    <Grid item xs={12} sm={6}>
+                      <Controller
+                        name="temps_cuisson"
+                        control={control}
+                        render={({ field }) => (
+                          <TextField
+                            {...field}
+                            fullWidth
+                            type="number"
+                            label="Temps de cuisson (minutes)"
+                            error={!!errors.temps_cuisson}
+                            helperText={errors.temps_cuisson?.message}
+                          />
+                        )}
+                      />
+                    </Grid>
+                    
+                    <Grid item xs={12}>
+                      <Controller
+                        name="est_publique"
+                        control={control}
+                        render={({ field }) => (
+                          <FormControlLabel
+                            control={<Switch {...field} checked={field.value} />}
+                            label="Rendre cette recette publique"
+                          />
+                        )}
+                      />
+                    </Grid>
+                  </Grid>
+                </CardContent>
+              </Card>
+            </Grid>
+            
+            <Grid item xs={12} md={4}>
+              <Card>
+                <CardHeader title="Ingrédients" />
+                <CardContent>
+                  <Box sx={{ mb: 3 }}>
+                    <Autocomplete
+                      options={ingredients}
+                      getOptionLabel={(option) => option.nom}
+                      renderInput={(params) => (
+                        <TextField 
+                          {...params} 
+                          label="Ajouter un ingrédient" 
+                          variant="outlined" 
+                        />
+                      )}
+                      onChange={(event, value) => handleAddIngredient(value)}
+                    />
+                  </Box>
+                  
+                  {errors.ingredients && (
+                    <Typography color="error" variant="body2" sx={{ mb: 2 }}>
+                      {errors.ingredients.message}
+                    </Typography>
+                  )}
+                  
+                  <Stack spacing={2}>
+                    {recipeIngredients.map((ingredient) => (
+                      <Paper 
+                        key={ingredient.id} 
+                        variant="outlined" 
+                        sx={{ p: 2, position: 'relative' }}
+                      >
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <Typography variant="subtitle1">{ingredient.nom}</Typography>
+                          <IconButton
+                            size="small"
+                            onClick={() => handleRemoveIngredient(ingredient.id)}
+                            sx={{ position: 'absolute', top: 4, right: 4 }}
+                          >
+                            <Delete fontSize="small" />
+                          </IconButton>
+                        </Box>
+                        
+                        <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+                          <TextField
+                            type="number"
+                            size="small"
+                            value={ingredient.quantite}
+                            onChange={(e) => handleQuantityChange(ingredient.id, parseFloat(e.target.value))}
+                            sx={{ width: 80, mr: 1 }}
+                          />
+                          <Typography variant="body2" color="text.secondary">
+                            {ingredient.unite}
+                          </Typography>
+                        </Box>
+                      </Paper>
+                    ))}
+                  </Stack>
+                </CardContent>
+              </Card>
+            </Grid>
+            
+            <Grid item xs={12}>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  startIcon={submitting ? <CircularProgress size={20} /> : <Save />}
+                  disabled={submitting}
+                  sx={{ px: 4, py: 1.5 }}
+                >
+                  {edit ? 'Mettre à jour' : 'Créer la recette'}
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
+        </form>
+      </motion.div>
+    </Container>
+  );
+};
+
+export default RecipeFormPage;
