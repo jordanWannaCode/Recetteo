@@ -1,0 +1,1633 @@
+2025-03-22 03:49:46,260 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:00:11,073 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:06:52,782 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:17:31,947 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:17:40,700 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:17:53,298 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:17:53,300 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:15,007 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:15,007 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:15,863 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:15,863 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:16,567 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:16,567 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:16,819 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:16,819 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:17,068 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:17,068 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:17,279 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:17,279 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:17,510 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:17,510 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:17,684 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:17,684 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:17,902 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:17,902 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:18:18,126 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:18:18,127 - app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'home' did not return a valid response. The function either returned None or ended without a return statement.
+2025-03-22 04:23:31,089 - app - INFO - Accès à la route d'accueil
+2025-03-22 04:28:41,517 - app - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 271, in error_router
+    return original_handler(e)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 471, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 500, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+2025-03-22 04:34:25,727 - app - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 271, in error_router
+    return original_handler(e)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 471, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 500, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+2025-03-22 04:39:43,687 - app - ERROR - Exception on /register [POST]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 271, in error_router
+    return original_handler(e)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 471, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 500, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+2025-03-22 04:51:49,749 - app - ERROR - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 271, in error_router
+    return original_handler(e)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 471, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 500, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+2025-03-22 04:56:42,158 - app - ERROR - Exception on /login [POST]
+Traceback (most recent call last):
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 271, in error_router
+    return original_handler(e)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 471, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\__init__.py", line 500, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\OneDrive\Bureau\FlaskProject1\.venv\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type Response is not JSON serializable
+2025-03-22 04:59:51,783 - app - INFO - Accès à la route d'accueil
+2025-03-22 05:01:04,618 - app - WARNING - Token JWT invalide
+2025-03-22 05:03:08,831 - app - WARNING - Token JWT invalide
+2025-03-22 05:03:17,845 - app - WARNING - Token JWT invalide
+2025-03-22 05:04:26,492 - app - WARNING - Token JWT invalide
+2025-03-22 05:14:56,568 - app - WARNING - Token JWT invalide
+2025-03-22 05:15:37,379 - app - WARNING - Token JWT invalide
+2025-03-22 05:16:53,967 - app - WARNING - Token JWT invalide
+2025-03-22 05:17:04,640 - app - WARNING - Token JWT invalide
+2025-03-22 05:18:37,420 - app - WARNING - Accès non autorisé
+2025-03-22 05:19:45,707 - app - WARNING - Token JWT invalide
+2025-03-22 05:20:31,591 - app - WARNING - Accès non autorisé
+2025-03-22 05:31:15,925 - app - WARNING - Token JWT invalide
+2025-03-22 05:32:01,928 - app - WARNING - Token JWT invalide
+2025-03-23 12:08:58,144 - __main__ - WARNING - Token JWT invalide
+2025-03-23 12:08:58,457 - __main__ - WARNING - Token JWT invalide
+2025-03-23 12:51:07,897 - __main__ - WARNING - Token JWT invalide
+2025-03-23 12:51:07,985 - __main__ - WARNING - Token JWT invalide
+2025-03-23 12:51:19,801 - __main__ - WARNING - Token JWT invalide
+2025-03-23 12:51:20,112 - __main__ - WARNING - Token JWT invalide
+2025-03-23 13:25:06,396 - __main__ - WARNING - Token JWT invalide
+2025-03-23 13:25:06,712 - __main__ - WARNING - Token JWT invalide
+2025-03-23 13:29:27,827 - __main__ - WARNING - Token JWT invalide
+2025-03-23 13:29:27,893 - __main__ - WARNING - Token JWT invalide
+2025-03-23 13:29:29,382 - __main__ - WARNING - Token JWT invalide
+2025-03-23 13:29:29,687 - __main__ - WARNING - Token JWT invalide
+2025-03-23 13:50:17,998 - __main__ - WARNING - Token JWT invalide
+2025-03-23 13:50:18,329 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:06:35,234 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:07:34,986 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:07:35,299 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:11:11,667 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:11:26,585 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:13:34,562 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:28:59,319 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:29:00,443 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:29:04,911 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:41:16,218 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:41:16,281 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:41:16,617 - __main__ - WARNING - Token JWT invalide
+2025-03-23 14:41:16,934 - __main__ - WARNING - Token JWT invalide
+2025-03-23 15:26:42,542 - __main__ - WARNING - Token JWT invalide
+2025-03-23 15:26:42,617 - __main__ - WARNING - Token JWT invalide
+2025-03-23 15:27:24,715 - __main__ - WARNING - Token JWT invalide
+2025-03-23 15:27:25,028 - __main__ - WARNING - Token JWT invalide
+2025-03-23 15:31:28,558 - __main__ - WARNING - Token JWT invalide
+2025-03-23 15:31:28,611 - __main__ - WARNING - Token JWT invalide
+2025-03-23 16:14:31,385 - __main__ - WARNING - Token JWT invalide
+2025-03-23 16:31:29,857 - __main__ - WARNING - Token JWT invalide
+2025-03-23 16:31:29,933 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:10:25,194 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:10:25,263 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:11:10,627 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:11:10,950 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:13:20,272 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:13:20,320 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:25:50,830 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:25:50,901 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:26:03,488 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:26:03,799 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:56:05,203 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:56:05,270 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:56:05,523 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:56:05,580 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:57:44,305 - __main__ - WARNING - Token JWT invalide
+2025-03-23 17:57:44,347 - __main__ - WARNING - Token JWT invalide
+2025-03-23 18:00:03,945 - __main__ - WARNING - Token JWT invalide
+2025-03-23 18:00:04,013 - __main__ - WARNING - Token JWT invalide
+2025-03-23 20:45:03,735 - __main__ - WARNING - Token JWT invalide
+2025-03-23 20:45:03,836 - __main__ - WARNING - Token JWT invalide
+2025-03-23 20:45:04,050 - __main__ - WARNING - Token JWT invalide
+2025-03-23 20:45:04,319 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:12:53,777 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:12:53,852 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:12:54,096 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:12:54,347 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:13:01,395 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:29:39,785 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:29:39,852 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:29:42,204 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:29:42,518 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:29:43,129 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:29:43,450 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:29:43,980 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:29:44,296 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:30:03,691 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:30:28,681 - __main__ - WARNING - Token JWT invalide
+2025-03-23 21:30:28,993 - __main__ - WARNING - Token JWT invalide
+2025-03-23 23:45:13,718 - __main__ - WARNING - Token JWT invalide
+2025-03-23 23:45:13,767 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:10:10,186 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:10:10,250 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:10:10,498 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:10:10,570 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:10:41,805 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:10:42,127 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:10:51,025 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:10:53,910 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:13:45,885 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:16:13,683 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:16:13,739 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:16:13,995 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:16:14,055 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:17:56,218 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:23:10,505 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:23:10,625 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:23:50,612 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:23:50,663 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:24:01,844 - __main__ - WARNING - Token JWT invalide
+2025-03-24 00:24:02,151 - __main__ - WARNING - Token JWT invalide
+2025-03-26 23:04:21,429 - app - ERROR - Exception on /recette/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        optional, fresh, refresh, locations, verify_type, skip_revocation_check
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~^
+        locations,
+        ^^^^^^^^^^
+    ...<3 lines>...
+        skip_revocation_check=skip_revocation_check,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+        encoded_token,
+    ...<5 lines>...
+        options=options,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 273, in _validate_claims
+    self._validate_sub(payload, subject)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 300, in _validate_sub
+    raise InvalidSubjectError("Subject must be a string")
+jwt.exceptions.InvalidSubjectError: Subject must be a string
+2025-03-26 23:04:21,872 - app - ERROR - Exception on /recette/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        optional, fresh, refresh, locations, verify_type, skip_revocation_check
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~^
+        locations,
+        ^^^^^^^^^^
+    ...<3 lines>...
+        skip_revocation_check=skip_revocation_check,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+        encoded_token,
+    ...<5 lines>...
+        options=options,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 273, in _validate_claims
+    self._validate_sub(payload, subject)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 300, in _validate_sub
+    raise InvalidSubjectError("Subject must be a string")
+jwt.exceptions.InvalidSubjectError: Subject must be a string
+2025-03-26 23:04:46,609 - app - ERROR - Exception on /recette/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        optional, fresh, refresh, locations, verify_type, skip_revocation_check
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~^
+        locations,
+        ^^^^^^^^^^
+    ...<3 lines>...
+        skip_revocation_check=skip_revocation_check,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+        encoded_token,
+    ...<5 lines>...
+        options=options,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 273, in _validate_claims
+    self._validate_sub(payload, subject)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 300, in _validate_sub
+    raise InvalidSubjectError("Subject must be a string")
+jwt.exceptions.InvalidSubjectError: Subject must be a string
+2025-03-26 23:04:46,924 - app - ERROR - Exception on /recette/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        optional, fresh, refresh, locations, verify_type, skip_revocation_check
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~^
+        locations,
+        ^^^^^^^^^^
+    ...<3 lines>...
+        skip_revocation_check=skip_revocation_check,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+        encoded_token,
+    ...<5 lines>...
+        options=options,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 273, in _validate_claims
+    self._validate_sub(payload, subject)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 300, in _validate_sub
+    raise InvalidSubjectError("Subject must be a string")
+jwt.exceptions.InvalidSubjectError: Subject must be a string
+2025-03-26 23:04:49,659 - app - ERROR - Exception on /recette/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        optional, fresh, refresh, locations, verify_type, skip_revocation_check
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~^
+        locations,
+        ^^^^^^^^^^
+    ...<3 lines>...
+        skip_revocation_check=skip_revocation_check,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+        encoded_token,
+    ...<5 lines>...
+        options=options,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 273, in _validate_claims
+    self._validate_sub(payload, subject)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 300, in _validate_sub
+    raise InvalidSubjectError("Subject must be a string")
+jwt.exceptions.InvalidSubjectError: Subject must be a string
+2025-03-26 23:04:49,976 - app - ERROR - Exception on /recette/ [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 489, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\views.py", line 109, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 604, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 167, in decorator
+    verify_jwt_in_request(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        optional, fresh, refresh, locations, verify_type, skip_revocation_check
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 94, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~^
+        locations,
+        ^^^^^^^^^^
+    ...<3 lines>...
+        skip_revocation_check=skip_revocation_check,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 340, in _decode_jwt_from_request
+    decoded_token = decode_token(encoded_token, csrf_token)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\utils.py", line 128, in decode_token
+    return jwt_manager._decode_jwt_from_config(encoded_token, csrf_value, allow_expired)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\jwt_manager.py", line 556, in _decode_jwt_from_config
+    return _decode_jwt(**kwargs, allow_expired=allow_expired)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_jwt_extended\tokens.py", line 95, in _decode_jwt
+    decoded_token = jwt.decode(
+        encoded_token,
+    ...<5 lines>...
+        options=options,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 222, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 167, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 273, in _validate_claims
+    self._validate_sub(payload, subject)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\jwt\api_jwt.py", line 300, in _validate_sub
+    raise InvalidSubjectError("Subject must be a string")
+jwt.exceptions.InvalidSubjectError: Subject must be a string
+2025-03-26 23:56:07,268 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:56:07,271 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:56:07,370 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:56:07,372 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:58:32,399 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:58:32,400 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:58:32,443 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:58:32,444 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:58:35,585 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:58:35,586 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:58:35,907 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:58:35,908 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:58:39,417 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:58:39,418 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:58:39,662 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:58:39,663 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:58:42,927 - app - WARNING - Token JWT invalide
+2025-03-26 23:58:46,415 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:58:46,416 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:58:46,731 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:58:46,731 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:59:00,465 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:59:00,466 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-26 23:59:00,742 - app - INFO - Liste des ingrédients récupérée
+2025-03-26 23:59:00,745 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:10:32,379 - app - WARNING - Token JWT invalide
+2025-03-27 00:10:34,918 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:10:34,919 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:10:35,239 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:10:35,240 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:11:12,026 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:11:12,027 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:11:12,342 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:11:12,342 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:18:32,596 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:18:32,600 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:18:32,959 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:18:32,960 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:21:01,403 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:21:01,404 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:21:01,722 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:21:01,723 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:21:46,958 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:21:46,958 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:22:19,593 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:22:19,594 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:22:19,908 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:22:19,909 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:28:13,713 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:28:13,715 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:28:14,013 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:28:14,013 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:30:03,128 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:30:03,130 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-03-27 00:30:03,446 - app - INFO - Liste des ingrédients récupérée
+2025-03-27 00:30:03,447 - app - ERROR - Exception on /ingredients [GET]
+Traceback (most recent call last):
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 493, in wrapper
+    return self.make_response(data, code, headers=headers)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\__init__.py", line 522, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\site-packages\flask_restful\representations\json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+             ~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 261, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\Regis\AppData\Local\Programs\Python\Python313\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type Response is not JSON serializable
+2025-04-10 01:13:46,736 - app - ERROR - Erreur inscription: (mysql.connector.errors.IntegrityError) 1048 (23000): Column 'utilisateur_id' cannot be null
+[SQL: INSERT INTO inventaires (nom, date_creation, date_modification, utilisateur_id) VALUES (%(nom)s, %(date_creation)s, %(date_modification)s, %(utilisateur_id)s)]
+[parameters: {'nom': 'Mon inventaire', 'date_creation': datetime.datetime(2025, 4, 9, 23, 13, 46, 729948), 'date_modification': None, 'utilisateur_id': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-04-10 13:00:54,545 - app - ERROR - Erreur inscription: (mysql.connector.errors.IntegrityError) 1048 (23000): Column 'utilisateur_id' cannot be null
+[SQL: INSERT INTO inventaires (nom, date_creation, date_modification, utilisateur_id) VALUES (%(nom)s, %(date_creation)s, %(date_modification)s, %(utilisateur_id)s)]
+[parameters: {'nom': 'Mon inventaire', 'date_creation': datetime.datetime(2025, 4, 10, 11, 0, 54, 536705), 'date_modification': None, 'utilisateur_id': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-04-10 13:04:22,049 - app - ERROR - Erreur inscription: (mysql.connector.errors.IntegrityError) 1048 (23000): Column 'utilisateur_id' cannot be null
+[SQL: INSERT INTO inventaires (nom, date_creation, date_modification, utilisateur_id) VALUES (%(nom)s, %(date_creation)s, %(date_modification)s, %(utilisateur_id)s)]
+[parameters: {'nom': 'Mon inventaire', 'date_creation': datetime.datetime(2025, 4, 10, 11, 4, 22, 45064), 'date_modification': None, 'utilisateur_id': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-04-10 13:07:13,191 - app - ERROR - Erreur inscription: (mysql.connector.errors.IntegrityError) 1048 (23000): Column 'utilisateur_id' cannot be null
+[SQL: INSERT INTO inventaires (nom, date_creation, date_modification, utilisateur_id) VALUES (%(nom)s, %(date_creation)s, %(date_modification)s, %(utilisateur_id)s)]
+[parameters: {'nom': 'Mon inventaire', 'date_creation': datetime.datetime(2025, 4, 10, 11, 7, 13, 187455), 'date_modification': None, 'utilisateur_id': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-04-10 13:19:02,831 - app - ERROR - Erreur inscription: (mysql.connector.errors.IntegrityError) 1048 (23000): Column 'utilisateur_id' cannot be null
+[SQL: INSERT INTO inventaires (nom, date_creation, date_modification, utilisateur_id) VALUES (%(nom)s, %(date_creation)s, %(date_modification)s, %(utilisateur_id)s)]
+[parameters: {'nom': 'Mon inventaire', 'date_creation': datetime.datetime(2025, 4, 10, 11, 19, 2, 826253), 'date_modification': None, 'utilisateur_id': None}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
