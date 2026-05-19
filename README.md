@@ -18,8 +18,8 @@ Le projet couvre les besoins suivants :
 
 Le dépôt regroupe :
 
-- un backend Python/Flask à la racine
-- un frontend React dans `src/`
+- un backend Python/Flask dans `backend/`
+- un frontend React dans `frontend/`
 - une base de données MySQL
 
 ## Stack technique
@@ -52,27 +52,23 @@ Le dépôt regroupe :
 
 ```text
 Recetteo/
-├── app.py
-├── config.py
-├── models.py
-├── validation.py
-├── requirements.txt
-├── package.json
-├── public/
-│   └── index.html
-├── routes/
-│   ├── auth.py
-│   ├── recettes.py
-│   ├── ingredients.py
-│   ├── inventaires.py
-│   └── shopping.py
-└── src/
-    ├── components/
-    ├── context/
-    ├── pages/
-    ├── services/
-    ├── App.js
-    └── index.js
+├── backend/
+│   ├── app.py
+│   ├── config.py
+│   ├── models.py
+│   ├── validation.py
+│   ├── requirements.txt
+│   ├── routes/
+│   ├── instance/
+│   └── uploads.py
+├── frontend/
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── public/
+│   └── src/
+├── api/
+│   └── index.py
+└── vercel.json
 ```
 
 ## Fonctionnalités implémentées
@@ -127,7 +123,7 @@ Le projet a été renforcé sur plusieurs axes.
 - ORM SQLAlchemy pour éviter les concaténations SQL manuelles
 - mots de passe hachés avec bcrypt
 - JWT pour protéger les routes privées
-- validation backend centralisée dans [validation.py](C:/Users/user/Desktop/Recetteo/validation.py:1)
+- validation backend centralisée dans [backend/validation.py](backend/validation.py)
 - limitation simple des tentatives sur `login/register`
 - CORS restreint par configuration
 - secrets et URI de base obligatoires via variables d'environnement
@@ -162,7 +158,7 @@ Le projet est fonctionnel côté base, mais il reste encore plusieurs écarts à
 Crée un environnement virtuel puis installe les dépendances Python :
 
 ```powershell
-cd C:\Users\user\Desktop\Recetteo
+cd C:\Users\user\Desktop\Recetteo\backend
 python -m venv .venv
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
@@ -174,7 +170,7 @@ Crée ensuite la base MySQL :
 CREATE DATABASE gestion_recettes;
 ```
 
-Crée un fichier `.env` à partir de [`.env.example`](C:/Users/user/Desktop/Recetteo/.env.example:1).
+Crée un fichier `.env` à partir de [backend/.env.example](backend/.env.example).
 
 Exemple :
 
@@ -182,7 +178,7 @@ Exemple :
 SECRET_KEY=une-vraie-cle-secrete
 JWT_SECRET_KEY=une-vraie-cle-jwt
 DATABASE_URI=mysql+mysqlconnector://root:TON_MOT_DE_PASSE@localhost:3306/gestion_recettes
-FLASK_APP=app.py
+FLASK_APP=backend.app
 FLASK_ENV=development
 VITE_API_URL=http://localhost:5000/api
 CORS_ORIGINS=http://localhost:5173,http://localhost:3000
@@ -192,8 +188,8 @@ CORS_ORIGINS=http://localhost:5173,http://localhost:3000
 
 ```powershell
 cd C:\Users\user\Desktop\Recetteo
-.venv\Scripts\Activate.ps1
-python app.py
+.\backend\.venv\Scripts\Activate.ps1
+python -m backend.app
 ```
 
 API disponible sur :
@@ -205,13 +201,7 @@ http://localhost:5000
 Test rapide :
 
 ```text
-GET /
-```
-
-Réponse attendue :
-
-```json
-{"message":"API de gestion de recettes"}
+GET /api/recettes/publiques
 ```
 
 ### Installation frontend
@@ -219,13 +209,14 @@ Réponse attendue :
 Installe les dépendances Node.js :
 
 ```powershell
-cd C:\Users\user\Desktop\Recetteo
+cd C:\Users\user\Desktop\Recetteo\frontend
 npm install
 ```
 
 ### Lancement du frontend
 
 ```powershell
+cd C:\Users\user\Desktop\Recetteo\frontend
 npm start
 ```
 
@@ -243,14 +234,14 @@ En pratique, il faut ouvrir deux terminaux :
 
 ```powershell
 cd C:\Users\user\Desktop\Recetteo
-.venv\Scripts\Activate.ps1
-python app.py
+.\backend\.venv\Scripts\Activate.ps1
+python -m backend.app
 ```
 
 ### Terminal 2
 
 ```powershell
-cd C:\Users\user\Desktop\Recetteo
+cd C:\Users\user\Desktop\Recetteo\frontend
 npm install
 npm start
 ```
@@ -305,12 +296,13 @@ npm start
 ### Vérification syntaxique Python
 
 ```powershell
-python -m py_compile app.py config.py models.py validation.py routes\auth.py routes\recettes.py routes\ingredients.py routes\inventaires.py routes\shopping.py
+python -m py_compile backend\app.py backend\config.py backend\models.py backend\validation.py backend\routes\auth.py backend\routes\recettes.py backend\routes\ingredients.py backend\routes\inventaires.py backend\routes\shopping.py
 ```
 
 ### Build frontend
 
 ```powershell
+cd C:\Users\user\Desktop\Recetteo\frontend
 npm run build
 ```
 
