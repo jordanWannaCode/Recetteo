@@ -5,19 +5,22 @@ import { motion } from 'framer-motion';
 import {
   Box, Container, Typography, Button, TextField,
   CircularProgress, Paper, Divider, IconButton,
-  Snackbar, Alert
+  Snackbar, Alert, Autocomplete
 } from '@mui/material';
 import { ArrowBack, Save, Delete } from '@mui/icons-material';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { MEASUREMENT_UNITS } from '../../utils/measurementUnits';
 
 const schema = yup.object().shape({
   nom: yup.string().required('Le nom est requis').max(120),
   unite: yup.string().required('L\'unité est requise').max(50),
-  prix_unitaire: yup.number()
-    .required('Le prix est requis')
-    .positive('Le prix doit être positif')
+  prix_unitaire: yup
+    .number()
+    .transform((value, originalValue) => (originalValue === '' || originalValue === null ? null : value))
+    .nullable()
+    .min(0, 'Le prix doit être positif')
     .typeError('Veuillez entrer un nombre valide')
 });
 
@@ -28,13 +31,14 @@ const IngredientFormPage = ({ edit = false }) => {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const unitOptions = MEASUREMENT_UNITS;
   
   const { control, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
       nom: '',
       unite: '',
-      prix_unitaire: 0
+      prix_unitaire: ''
     }
   });
 
@@ -47,7 +51,7 @@ const IngredientFormPage = ({ edit = false }) => {
           reset({
             nom: response.data.nom,
             unite: response.data.unite,
-            prix_unitaire: response.data.prix_unitaire
+            prix_unitaire: response.data.prix_unitaire ?? ''
           });
         } catch (error) {
           console.error('Failed to fetch ingredient', error);
@@ -68,11 +72,19 @@ const IngredientFormPage = ({ edit = false }) => {
     try {
       setSubmitting(true);
       setError(null);
+
+      const payload = {
+        nom: data.nom,
+        unite: data.unite
+      };
+      if (data.prix_unitaire !== '' && data.prix_unitaire !== null && typeof data.prix_unitaire !== 'undefined') {
+        payload.prix_unitaire = data.prix_unitaire;
+      }
       
       if (edit && id) {
-        await ingredientService.update(id, data);
+        await ingredientService.update(id, payload);
       } else {
-        await ingredientService.create(data);
+        await ingredientService.create(payload);
       }
       
       setSuccess(true);
@@ -131,13 +143,22 @@ const IngredientFormPage = ({ edit = false }) => {
               name="unite"
               control={control}
               render={({ field }) => (
-                <TextField
-                  {...field}
-                  fullWidth
-                  label="Unité de mesure"
-                  margin="normal"
-                  error={!!errors.unite}
-                  helperText={errors.unite?.message}
+                <Autocomplete
+                  freeSolo
+                  options={unitOptions}
+                  value={field.value || ''}
+                  onChange={(event, value) => field.onChange(value || '')}
+                  onInputChange={(event, value) => field.onChange(value)}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      fullWidth
+                      label="Unité de mesure"
+                      margin="normal"
+                      error={!!errors.unite}
+                      helperText={errors.unite?.message}
+                    />
+                  )}
                 />
               )}
             />
@@ -149,7 +170,7 @@ const IngredientFormPage = ({ edit = false }) => {
                 <TextField
                   {...field}
                   fullWidth
-                  label="Prix unitaire (€)"
+                  label="Prix unitaire (€) (optionnel)"
                   type="number"
                   margin="normal"
                   inputProps={{ step: "0.01", min: "0" }}

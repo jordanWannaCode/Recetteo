@@ -4,10 +4,10 @@ import { ingredientService } from '../../services/api';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Box, Container, Typography, Button, Grid, Card, CardContent,
-  CardActions, TextField, IconButton, Tooltip, Chip, Paper,
+  CardActions, CardActionArea, TextField, IconButton, Tooltip, Chip, Paper,
   CircularProgress, Dialog, DialogTitle, DialogContent, DialogActions
 } from '@mui/material';
-import { Add, Search, Delete, Edit, FilterList } from '@mui/icons-material';
+import { Add, Search, Delete, Edit, FilterList, Visibility } from '@mui/icons-material';
 
 const IngredientsPage = () => {
   const [ingredients, setIngredients] = useState([]);
@@ -59,6 +59,10 @@ const IngredientsPage = () => {
 
   const handleAddIngredient = () => {
     navigate('/ingredients/nouveau');
+  };
+
+  const handleViewIngredient = (ingredientId) => {
+    navigate(`/ingredients/${ingredientId}`);
   };
 
   if (loading) {
@@ -129,26 +133,35 @@ const IngredientsPage = () => {
                     whileHover={{ scale: 1.03 }}
                   >
                     <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                      <CardContent sx={{ flexGrow: 1 }}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                          <Typography variant="h6" component="h2">
-                            {ingredient.nom}
+                      <CardActionArea onClick={() => handleViewIngredient(ingredient.id)} sx={{ flexGrow: 1, alignItems: 'stretch' }}>
+                        <CardContent sx={{ flexGrow: 1 }}>
+                          <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                            <Typography variant="h6" component="h2">
+                              {ingredient.nom}
+                            </Typography>
+                            <Chip 
+                              label={ingredient.unite} 
+                              size="small" 
+                              color="primary" 
+                              variant="outlined"
+                            />
+                          </Box>
+                          <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+                            {ingredient.prix_unitaire !== null && typeof ingredient.prix_unitaire !== 'undefined'
+                              ? `${ingredient.prix_unitaire} € / unité`
+                              : 'Prix unitaire non renseigné'}
                           </Typography>
-                          <Chip 
-                            label={ingredient.unite} 
-                            size="small" 
-                            color="primary" 
-                            variant="outlined"
-                          />
-                        </Box>
-                        <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-                          {ingredient.prix_unitaire} € / unité
-                        </Typography>
-                        <Typography variant="caption" color="text.secondary">
-                          Ajouté le: {new Date(ingredient.date_ajout).toLocaleDateString()}
-                        </Typography>
-                      </CardContent>
+                          <Typography variant="caption" color="text.secondary">
+                            Ajouté le: {new Date(ingredient.date_ajout).toLocaleDateString()}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
                       <CardActions sx={{ justifyContent: 'flex-end' }}>
+                        <Tooltip title="Voir">
+                          <IconButton onClick={() => handleViewIngredient(ingredient.id)}>
+                            <Visibility />
+                          </IconButton>
+                        </Tooltip>
                         <Tooltip title="Modifier">
                           <IconButton 
                             onClick={() => navigate(`/ingredients/${ingredient.id}/modifier`)}

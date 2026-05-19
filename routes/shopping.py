@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from models import db, ShoppingList, ShoppingListItem, Recette, Inventaire, InventaireIngredient, Ingredient, RecetteIngredient
 import logging
+from validation import ValidationError, validate_shopping_item_payload
 
 # Configuration des logs
 logging.basicConfig(level=logging.INFO)
@@ -12,7 +13,7 @@ shopping_bp = Blueprint('shopping', __name__)
 @shopping_bp.route('/lists', methods=['GET'])
 @jwt_required()
 def get_shopping_lists():
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     
     # Obtenir les listes de courses de l'utilisateur
     shopping_lists = ShoppingList.query.filter_by(utilisateur_id=user_id).all()
@@ -24,7 +25,7 @@ def get_shopping_lists():
 @shopping_bp.route('/lists/<int:liste_id>', methods=['GET'])
 @jwt_required()
 def get_shopping_list(liste_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     shopping_list = ShoppingList.query.get(liste_id)
     
     if not shopping_list:
@@ -39,7 +40,7 @@ def get_shopping_list(liste_id):
 @shopping_bp.route('/lists', methods=['POST'])
 @jwt_required()
 def create_shopping_list():
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     
     try:
         # Création d'une nouvelle liste de courses
@@ -63,7 +64,7 @@ def create_shopping_list():
 @shopping_bp.route('/lists/<int:liste_id>/items', methods=['POST'])
 @jwt_required()
 def add_item_to_list(liste_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     shopping_list = ShoppingList.query.get(liste_id)
     
     if not shopping_list:
@@ -73,11 +74,10 @@ def add_item_to_list(liste_id):
     if shopping_list.utilisateur_id != user_id:
         return jsonify({"message": "Vous n'êtes pas autorisé à modifier cette liste"}), 403
     
-    data = request.get_json()
-    
-    # Validation des données
-    if not all(k in data for k in ('ingredient_id', 'quantite')):
-        return jsonify({"message": "L'ID de l'ingrédient et la quantité sont requis"}), 400
+    try:
+        data = validate_shopping_item_payload(request.get_json(silent=True))
+    except ValidationError as exc:
+        return jsonify({"message": str(exc)}), 400
     
     try:
         # Vérifier si l'ingrédient existe
@@ -119,7 +119,7 @@ def add_item_to_list(liste_id):
 @shopping_bp.route('/lists/<int:liste_id>/items/<int:item_id>', methods=['PUT'])
 @jwt_required()
 def update_shopping_list_item(liste_id, item_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     shopping_list = ShoppingList.query.get(liste_id)
     
     if not shopping_list:
@@ -133,7 +133,10 @@ def update_shopping_list_item(liste_id, item_id):
     if not item or item.liste_id != liste_id:
         return jsonify({"message": "Article non trouvé dans cette liste"}), 404
     
-    data = request.get_json()
+    try:
+        data = validate_shopping_item_payload(request.get_json(silent=True), partial=True)
+    except ValidationError as exc:
+        return jsonify({"message": str(exc)}), 400
     
     try:
         # Mise à jour de l'article
@@ -158,7 +161,7 @@ def update_shopping_list_item(liste_id, item_id):
 @shopping_bp.route('/lists/<int:liste_id>/items/<int:item_id>', methods=['DELETE'])
 @jwt_required()
 def delete_shopping_list_item(liste_id, item_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     shopping_list = ShoppingList.query.get(liste_id)
     
     if not shopping_list:
@@ -188,7 +191,7 @@ def delete_shopping_list_item(liste_id, item_id):
 @shopping_bp.route('/lists/<int:liste_id>', methods=['DELETE'])
 @jwt_required()
 def delete_shopping_list(liste_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     shopping_list = ShoppingList.query.get(liste_id)
     
     if not shopping_list:
@@ -214,7 +217,7 @@ def delete_shopping_list(liste_id):
 @shopping_bp.route('/generate/<int:recette_id>/<int:inventaire_id>', methods=['POST'])
 @jwt_required()
 def generate_shopping_list(recette_id, inventaire_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     
     # Vérifier si la recette existe
     recette = Recette.query.get(recette_id)

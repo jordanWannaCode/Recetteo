@@ -2,6 +2,11 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from models import db, Inventaire, InventaireIngredient, Ingredient
 import logging
+from validation import (
+    ValidationError,
+    validate_inventory_payload,
+    validate_inventory_quantity_payload,
+)
 
 # Configuration des logs
 logging.basicConfig(level=logging.INFO)
@@ -12,7 +17,7 @@ inventaires_bp = Blueprint('inventaires', __name__)
 @inventaires_bp.route('/', methods=['GET'])
 @jwt_required()
 def get_inventaires():
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     
     # Obtenir les inventaires de l'utilisateur
     inventaires = Inventaire.query.filter_by(utilisateur_id=user_id).all()
@@ -24,7 +29,7 @@ def get_inventaires():
 @inventaires_bp.route('/<int:inventaire_id>', methods=['GET'])
 @jwt_required()
 def get_inventaire(inventaire_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     inventaire = Inventaire.query.get(inventaire_id)
     
     if not inventaire:
@@ -39,12 +44,11 @@ def get_inventaire(inventaire_id):
 @inventaires_bp.route('/', methods=['POST'])
 @jwt_required()
 def create_inventaire():
-    user_id = get_jwt_identity()
-    data = request.get_json()
-    
-    # Validation des données
-    if 'nom' not in data:
-        return jsonify({"message": "Le nom de l'inventaire est requis"}), 400
+    user_id = int(get_jwt_identity())
+    try:
+        data = validate_inventory_payload(request.get_json(silent=True))
+    except ValidationError as exc:
+        return jsonify({"message": str(exc)}), 400
     
     try:
         # Création de l'inventaire
@@ -59,15 +63,14 @@ def create_inventaire():
         # Ajouter les ingrédients si fournis
         if 'ingredients' in data and isinstance(data['ingredients'], list):
             for ingredient_data in data['ingredients']:
-                if all(k in ingredient_data for k in ('id', 'quantite_disponible')):
-                    ingredient = Ingredient.query.get(ingredient_data['id'])
-                    if ingredient:
-                        inventaire_ingredient = InventaireIngredient(
-                            inventaire_id=nouvel_inventaire.id,
-                            ingredient_id=ingredient.id,
-                            quantite_disponible=ingredient_data['quantite_disponible']
-                        )
-                        db.session.add(inventaire_ingredient)
+                ingredient = Ingredient.query.get(ingredient_data['id'])
+                if ingredient:
+                    inventaire_ingredient = InventaireIngredient(
+                        inventaire_id=nouvel_inventaire.id,
+                        ingredient_id=ingredient.id,
+                        quantite_disponible=ingredient_data['quantite_disponible']
+                    )
+                    db.session.add(inventaire_ingredient)
             
             db.session.commit()
         
@@ -84,7 +87,7 @@ def create_inventaire():
 @inventaires_bp.route('/<int:inventaire_id>', methods=['PUT'])
 @jwt_required()
 def update_inventaire(inventaire_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     inventaire = Inventaire.query.get(inventaire_id)
     
     if not inventaire:
@@ -94,7 +97,10 @@ def update_inventaire(inventaire_id):
     if inventaire.utilisateur_id != user_id:
         return jsonify({"message": "Vous n'êtes pas autorisé à modifier cet inventaire"}), 403
     
-    data = request.get_json()
+    try:
+        data = validate_inventory_payload(request.get_json(silent=True), partial=True)
+    except ValidationError as exc:
+        return jsonify({"message": str(exc)}), 400
     
     try:
         # Mise à jour des informations de l'inventaire
@@ -108,15 +114,14 @@ def update_inventaire(inventaire_id):
             
             # Ajouter les nouveaux ingrédients
             for ingredient_data in data['ingredients']:
-                if all(k in ingredient_data for k in ('id', 'quantite_disponible')):
-                    ingredient = Ingredient.query.get(ingredient_data['id'])
-                    if ingredient:
-                        inventaire_ingredient = InventaireIngredient(
-                            inventaire_id=inventaire.id,
-                            ingredient_id=ingredient.id,
-                            quantite_disponible=ingredient_data['quantite_disponible']
-                        )
-                        db.session.add(inventaire_ingredient)
+                ingredient = Ingredient.query.get(ingredient_data['id'])
+                if ingredient:
+                    inventaire_ingredient = InventaireIngredient(
+                        inventaire_id=inventaire.id,
+                        ingredient_id=ingredient.id,
+                        quantite_disponible=ingredient_data['quantite_disponible']
+                    )
+                    db.session.add(inventaire_ingredient)
         
         db.session.commit()
         
@@ -133,7 +138,7 @@ def update_inventaire(inventaire_id):
 @inventaires_bp.route('/<int:inventaire_id>/ingredients/<int:ingredient_id>', methods=['PUT'])
 @jwt_required()
 def update_ingredient_quantity(inventaire_id, ingredient_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     inventaire = Inventaire.query.get(inventaire_id)
     
     if not inventaire:
@@ -143,10 +148,10 @@ def update_ingredient_quantity(inventaire_id, ingredient_id):
     if inventaire.utilisateur_id != user_id:
         return jsonify({"message": "Vous n'êtes pas autorisé à modifier cet inventaire"}), 403
     
-    data = request.get_json()
-    
-    if 'quantite_disponible' not in data:
-        return jsonify({"message": "La quantité disponible est requise"}), 400
+    try:
+        data = validate_inventory_quantity_payload(request.get_json(silent=True))
+    except ValidationError as exc:
+        return jsonify({"message": str(exc)}), 400
     
     try:
         # Rechercher l'ingrédient dans l'inventaire
@@ -186,7 +191,7 @@ def update_ingredient_quantity(inventaire_id, ingredient_id):
 @inventaires_bp.route('/<int:inventaire_id>', methods=['DELETE'])
 @jwt_required()
 def delete_inventaire(inventaire_id):
-    user_id = get_jwt_identity()
+    user_id = int(get_jwt_identity())
     inventaire = Inventaire.query.get(inventaire_id)
     
     if not inventaire:

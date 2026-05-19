@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Link, Divider } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Container, Grid, Typography, Link, Divider, Button, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
+import { HelpOutline, MenuBook, PersonAdd } from '@mui/icons-material';
 
 const Footer = () => {
   return (
@@ -32,28 +33,14 @@ const Footer = () => {
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
               L'application ultime pour gérer vos recettes, inventaires et listes de courses.
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
-              <motion.div whileHover={{ y: -2 }}>
-                <Link href="#" color="inherit">
-                  <Facebook />
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ y: -2 }}>
-                <Link href="#" color="inherit">
-                  <Twitter />
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ y: -2 }}>
-                <Link href="#" color="inherit">
-                  <Instagram />
-                </Link>
-              </motion.div>
-              <motion.div whileHover={{ y: -2 }}>
-                <Link href="#" color="inherit">
-                  <LinkedIn />
-                </Link>
-              </motion.div>
-            </Box>
+            <Stack direction="row" spacing={1.5}>
+              <Button component={RouterLink} to="/aide" startIcon={<HelpOutline />} size="small">
+                Aide
+              </Button>
+              <Button component={RouterLink} to="/register" startIcon={<PersonAdd />} size="small">
+                Inscription
+              </Button>
+            </Stack>
           </Grid>
           
           <Grid item xs={6} md={2}>
@@ -61,16 +48,16 @@ const Footer = () => {
               Navigation
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Link href="/recettes" color="text.secondary" sx={{ mb: 1 }}>
+              <Link component={RouterLink} to="/recettes" color="text.secondary" sx={{ mb: 1 }}>
                 Recettes
               </Link>
-              <Link href="/ingredients" color="text.secondary" sx={{ mb: 1 }}>
+              <Link component={RouterLink} to="/ingredients" color="text.secondary" sx={{ mb: 1 }}>
                 Ingrédients
               </Link>
-              <Link href="/inventaires" color="text.secondary" sx={{ mb: 1 }}>
+              <Link component={RouterLink} to="/inventaires" color="text.secondary" sx={{ mb: 1 }}>
                 Inventaires
               </Link>
-              <Link href="/liste-courses" color="text.secondary" sx={{ mb: 1 }}>
+              <Link component={RouterLink} to="/liste-courses" color="text.secondary" sx={{ mb: 1 }}>
                 Liste de courses
               </Link>
             </Box>
@@ -81,53 +68,42 @@ const Footer = () => {
               Ressources
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Link href="#" color="text.secondary" sx={{ mb: 1 }}>
-                Documentation
+              <Link component={RouterLink} to="/aide" color="text.secondary" sx={{ mb: 1 }}>
+                Centre d'aide
               </Link>
-              <Link href="#" color="text.secondary" sx={{ mb: 1 }}>
-                Blog
-              </Link>
-              <Link href="#" color="text.secondary" sx={{ mb: 1 }}>
-                Tutoriels
-              </Link>
-              <Link href="#" color="text.secondary" sx={{ mb: 1 }}>
+              <Link component={RouterLink} to="/aide" color="text.secondary" sx={{ mb: 1 }}>
                 FAQ
+              </Link>
+              <Link component={RouterLink} to="/cookies" color="text.secondary" sx={{ mb: 1 }}>
+                Consentement cookies
+              </Link>
+              <Link component={RouterLink} to="/suppression-compte" color="text.secondary" sx={{ mb: 1 }}>
+                Suppression du compte
+              </Link>
+              <Link component={RouterLink} to="/register" color="text.secondary" sx={{ mb: 1 }}>
+                Créer un compte
+              </Link>
+              <Link component={RouterLink} to="/login" color="text.secondary" sx={{ mb: 1 }}>
+                Se connecter
               </Link>
             </Box>
           </Grid>
           
           <Grid item xs={12} md={4}>
             <Typography variant="subtitle1" sx={{ mb: 2, fontWeight: 600 }}>
-              Newsletter
+              Démarrer
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-              Abonnez-vous à notre newsletter pour recevoir les dernières mises à jour.
+              Le parcours le plus complet passe par quatre modules déjà intégrés: recettes, ingrédients, inventaires et listes de courses.
             </Typography>
-            <Box sx={{ display: 'flex' }}>
-              <input 
-                type="email" 
-                placeholder="Votre email" 
-                style={{ 
-                  flexGrow: 1, 
-                  padding: '10px', 
-                  border: '1px solid #ccc', 
-                  borderRadius: '4px 0 0 4px',
-                  fontSize: '14px'
-                }} 
-              />
-              <button 
-                style={{ 
-                  backgroundColor: '#4a6fa5', 
-                  color: 'white', 
-                  border: 'none', 
-                  padding: '0 16px',
-                  borderRadius: '0 4px 4px 0',
-                  cursor: 'pointer'
-                }}
-              >
-                S'abonner
-              </button>
-            </Box>
+            <Stack spacing={1.5}>
+              <Button component={RouterLink} to="/recettes" variant="contained" startIcon={<MenuBook />}>
+                Ouvrir les recettes
+              </Button>
+              <Button component={RouterLink} to="/aide" variant="outlined">
+                Consulter l'aide
+              </Button>
+            </Stack>
           </Grid>
         </Grid>
         
@@ -138,11 +114,14 @@ const Footer = () => {
             © {new Date().getFullYear()} Recetteo. Tous droits réservés.
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
-            <Link href="#" variant="body2" color="text.secondary">
+            <Link component={RouterLink} to="/terms" variant="body2" color="text.secondary">
               Conditions d'utilisation
             </Link>
-            <Link href="#" variant="body2" color="text.secondary">
+            <Link component={RouterLink} to="/privacy" variant="body2" color="text.secondary">
               Politique de confidentialité
+            </Link>
+            <Link component={RouterLink} to="/cookies" variant="body2" color="text.secondary">
+              Cookies
             </Link>
           </Box>
         </Box>

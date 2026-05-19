@@ -32,6 +32,8 @@ const passwordSchema = yup.object().shape({
     .required('La confirmation du mot de passe est requise'),
 });
 
+const MAX_AVATAR_SIZE = 1024 * 1024;
+
 const ProfilePage = () => {
   const { user, updateUser, logout } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -39,6 +41,10 @@ const ProfilePage = () => {
   const [changingPassword, setChangingPassword] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
+  const [avatarFile, setAvatarFile] = useState(null);
+  const [avatarPreview, setAvatarPreview] = useState(user?.avatar || '');
+  const [avatarUploading, setAvatarUploading] = useState(false);
+  const [avatarError, setAvatarError] = useState('');
   const navigate = useNavigate();
 
   const { 
@@ -69,6 +75,19 @@ const ProfilePage = () => {
       email: user?.email || '',
     });
   }, [user, resetProfile]);
+
+  useEffect(() => {
+    if (user?.avatar) {
+      setAvatarPreview(user.avatar);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (!avatarFile) return;
+    const previewUrl = URL.createObjectURL(avatarFile);
+    setAvatarPreview(previewUrl);
+    return () => URL.revokeObjectURL(previewUrl);
+  }, [avatarFile]);
 
   const handleProfileUpdate = async (data) => {
     try {
@@ -102,6 +121,48 @@ const ProfilePage = () => {
       setError(error.response?.data?.message || 'Erreur lors du changement de mot de passe');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleAvatarSelect = (event) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith('image/')) {
+      setAvatarError('Veuillez selectionner une image valide.');
+      setAvatarFile(null);
+      setAvatarPreview(user?.avatar || '');
+      return;
+    }
+
+    if (file.size > MAX_AVATAR_SIZE) {
+      setAvatarError('Image trop lourde (1 Mo max).');
+      setAvatarFile(null);
+      setAvatarPreview(user?.avatar || '');
+      return;
+    }
+
+    setAvatarError('');
+    setAvatarFile(file);
+  };
+
+  const handleAvatarUpload = async () => {
+    if (!avatarFile) return;
+
+    try {
+      setAvatarUploading(true);
+      setError(null);
+      const formData = new FormData();
+      formData.append('avatar', avatarFile);
+      const response = await authService.uploadAvatar(formData);
+      updateUser(response.data);
+      setAvatarFile(null);
+      setSuccess('Photo de profil mise a jour');
+    } catch (error) {
+      console.error('Failed to upload avatar', error);
+      setError(error.response?.data?.message || "Erreur lors de l'upload de la photo");
+    } finally {
+      setAvatarUploading(false);
     }
   };
 
@@ -189,6 +250,7 @@ const ProfilePage = () => {
                 bgcolor: 'primary.main',
                 mb: 2
               }}
+              src={user.avatar || undefined}
             >
               {user.nom_utilisateur?.charAt(0).toUpperCase()}
             </Avatar>
@@ -199,6 +261,39 @@ const ProfilePage = () => {
               Membre depuis {new Date(user.date_inscription).toLocaleDateString()}
             </Typography>
           </Box>
+
+          <Stack spacing={2} sx={{ mb: 3 }}>
+            <Typography variant="subtitle1">Photo de profil</Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems={{ sm: 'center' }}>
+              <Avatar
+                sx={{ width: 72, height: 72, bgcolor: 'primary.main' }}
+                src={avatarPreview || user.avatar || undefined}
+              >
+                {user.nom_utilisateur?.charAt(0).toUpperCase()}
+              </Avatar>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
+                <Button variant="outlined" component="label" disabled={avatarUploading}>
+                  Choisir une image
+                  <input
+                    type="file"
+                    hidden
+                    accept="image/*"
+                    onChange={handleAvatarSelect}
+                  />
+                </Button>
+                <Button
+                  variant="contained"
+                  onClick={handleAvatarUpload}
+                  disabled={!avatarFile || avatarUploading}
+                >
+                  {avatarUploading ? 'Upload...' : 'Mettre a jour'}
+                </Button>
+              </Stack>
+            </Stack>
+            {avatarError && (
+              <Alert severity="warning">{avatarError}</Alert>
+            )}
+          </Stack>
 
           {!editing ? (
             <Stack spacing={2}>

@@ -24,6 +24,11 @@ import InventoryDetailPage from './pages/inventory/InventoryDetailPage';
 import InventoryFormPage from './pages/inventory/InventoryFormPage';
 import ShoppingListsPage from './pages/shopping/ShoppingListsPage';
 import NotFoundPage from './pages/NotFoundPage';
+import HelpPage from './pages/HelpPage';
+import TermsPage from './pages/TermsPage';
+import PrivacyPage from './pages/PrivacyPage';
+import CookiesPage from './pages/CookiesPage';
+import DeleteAccountPage from './pages/auth/DeleteAccountPage';
 import PrivateRoute from './components/common/PrivateRoute';
 
 function App() {
@@ -37,6 +42,10 @@ function App() {
             <Routes>
               {/* Routes publiques */}
               <Route path="/" element={<HomePage />} />
+              <Route path="/aide" element={<HelpPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
+              <Route path="/cookies" element={<CookiesPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               
@@ -44,6 +53,11 @@ function App() {
               <Route path="/profile" element={
                 <PrivateRoute>
                   <ProfilePage />
+                </PrivateRoute>
+              } />
+              <Route path="/suppression-compte" element={
+                <PrivateRoute>
+                  <DeleteAccountPage />
                 </PrivateRoute>
               } />
               

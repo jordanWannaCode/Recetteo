@@ -13,8 +13,7 @@ import {
   AccountCircle,
   ExitToApp,
   Close,
-  Person,
-  Settings
+  Person
 } from '@mui/icons-material';
 
 const Navbar = () => {
@@ -56,7 +55,7 @@ const Navbar = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+      navigate(`/recettes?search=${encodeURIComponent(searchQuery.trim())}`);
       handleSearchClose();
     }
   };
@@ -215,9 +214,6 @@ const Navbar = () => {
                     <MenuItem onClick={() => navigate('/profile')}>
                       <AccountCircle sx={{ mr: 1.5 }} /> Mon profil
                     </MenuItem>
-                    <MenuItem onClick={() => navigate('/settings')}>
-                      <Settings sx={{ mr: 1.5 }} /> Paramètres
-                    </MenuItem>
                     <Divider />
                     <MenuItem onClick={handleLogout}>
                       <ExitToApp sx={{ mr: 1.5 }} /> Déconnexion
@@ -273,31 +269,26 @@ const Navbar = () => {
           <MenuItem onClick={() => navigateTo('/inventaires')}>Inventaires</MenuItem>
           <MenuItem onClick={() => navigateTo('/liste-courses')}>Liste de courses</MenuItem>
           
-          {user ? (
-            <>
-              <Divider />
-              <MenuItem onClick={() => navigateTo('/profile')}>
-                <AccountCircle sx={{ mr: 1.5 }} /> Profil
-              </MenuItem>
-              <MenuItem onClick={() => navigateTo('/settings')}>
-                <Settings sx={{ mr: 1.5 }} /> Paramètres
-              </MenuItem>
-              <Divider />
-              <MenuItem onClick={handleLogout}>
-                <ExitToApp sx={{ mr: 1.5 }} /> Déconnexion
-              </MenuItem>
-            </>
-          ) : (
-            <>
-              <Divider />
-              <MenuItem onClick={() => navigateTo('/login')}>
-                <Person sx={{ mr: 1.5 }} /> Connexion
-              </MenuItem>
-              <MenuItem onClick={() => navigateTo('/register')}>
-                <ExitToApp sx={{ mr: 1.5 }} /> Inscription
-              </MenuItem>
-            </>
-          )}
+          {user
+            ? [
+                <Divider key="user-divider-top" />,
+                <MenuItem key="user-profile" onClick={() => navigateTo('/profile')}>
+                  <AccountCircle sx={{ mr: 1.5 }} /> Profil
+                </MenuItem>,
+                <Divider key="user-divider-bottom" />,
+                <MenuItem key="user-logout" onClick={handleLogout}>
+                  <ExitToApp sx={{ mr: 1.5 }} /> Déconnexion
+                </MenuItem>,
+              ]
+            : [
+                <Divider key="guest-divider" />,
+                <MenuItem key="guest-login" onClick={() => navigateTo('/login')}>
+                  <Person sx={{ mr: 1.5 }} /> Connexion
+                </MenuItem>,
+                <MenuItem key="guest-register" onClick={() => navigateTo('/register')}>
+                  <ExitToApp sx={{ mr: 1.5 }} /> Inscription
+                </MenuItem>,
+              ]}
         </Menu>
       </AppBar>
     </Slide>

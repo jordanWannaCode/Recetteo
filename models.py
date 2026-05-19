@@ -1,9 +1,7 @@
-from werkzeug.security import generate_password_hash, check_password_hash
 import logging
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from datetime import datetime
-from flask import jsonify
 
 db = SQLAlchemy()
 bcrypt = Bcrypt()
@@ -20,6 +18,7 @@ class Utilisateur(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     mot_de_passe = db.Column(db.String(128), nullable=False)
     date_inscription = db.Column(db.DateTime, default=datetime.utcnow)
+    avatar_url = db.Column(db.String(255), nullable=True)
 
     recettes = db.relationship('Recette', backref='auteur', lazy=True)
     inventaires = db.relationship('Inventaire', backref='proprietaire', lazy=True)
@@ -44,14 +43,16 @@ class Utilisateur(db.Model):
             'id': self.id,
             'nom_utilisateur': self.nom_utilisateur,
             'email': self.email,
-            'date_inscription': self.date_inscription.isoformat()
+            'date_inscription': self.date_inscription.isoformat(),
+            'avatar': self.avatar_url
         }
 
     def to_safe_dict(self):
         return {
             'id': self.id,
             'nom_utilisateur': self.nom_utilisateur,
-            'date_inscription': self.date_inscription.isoformat()
+            'date_inscription': self.date_inscription.isoformat(),
+            'avatar': self.avatar_url
         }
 
     def __repr__(self):
@@ -64,6 +65,7 @@ class Recette(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nom = db.Column(db.String(120), nullable=False)
     description = db.Column(db.Text, nullable=False)
+    image_url = db.Column(db.String(255), nullable=True)
     temps_preparation = db.Column(db.Integer, nullable=False)
     temps_cuisson = db.Column(db.Integer, nullable=False)
     est_publique = db.Column(db.Boolean, default=False, nullable=False)
@@ -78,6 +80,7 @@ class Recette(db.Model):
             'id': self.id,
             'nom': self.nom,
             'description':   self.description,
+            'image': self.image_url,
             'temps_preparation': self.temps_preparation,
             'temps_cuisson': self.temps_cuisson,
             'est_publique': self.est_publique,
@@ -85,6 +88,11 @@ class Recette(db.Model):
             'date_modification': self.date_modification.isoformat() if self.date_modification else None,
             'utilisateur_id': self.utilisateur_id
         }
+
+        if self.auteur:
+            data['auteur'] = self.auteur.to_safe_dict()
+        else:
+            data['auteur'] = None
 
         if with_ingredients:
             data['ingredients'] = []
@@ -112,7 +120,6 @@ class Recette(db.Model):
                 quantite=quantite
             )
             db.session.add(ri)
-            db.session.commit()
             return True
         except Exception as e:
             db.session.rollback()
@@ -129,7 +136,7 @@ class Ingredient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nom = db.Column(db.String(120), nullable=False, unique=True)
     unite = db.Column(db.String(50), nullable=False)
-    prix_unitaire = db.Column(db.Float, nullable=False)
+    prix_unitaire = db.Column(db.Float, nullable=True)
     date_ajout = db.Column(db.DateTime, default=datetime.utcnow)
     
     recettes = db.relationship('RecetteIngredient', backref='ingredient_rel', lazy=True)
@@ -177,7 +184,8 @@ class Inventaire(db.Model):
             'nom': self.nom,
             'date_creation': self.date_creation.isoformat(),
             'date_modification': self.date_modification.isoformat() if self.date_modification else None,
-            'utilisateur_id': self.utilisateur_id
+            'utilisateur_id': self.utilisateur_id,
+            'ingredients_count': len(self.ingredients)
         }
 
         if with_ingredients:
@@ -234,6 +242,16 @@ class ShoppingList(db.Model):
     items = db.relationship('ShoppingListItem', backref='liste', lazy=True, cascade='all, delete-orphan')
 
     def to_dict(self):
+        prix_total = sum(
+            item.quantite
+            * (
+                item.ingredient_item.prix_unitaire
+                if item.ingredient_item and item.ingredient_item.prix_unitaire is not None
+                else 0
+            )
+            for item in self.items
+        )
+
         return {
             'id': self.id,
             'utilisateur_id': self.utilisateur_id,
@@ -242,7 +260,7 @@ class ShoppingList(db.Model):
             'items': [item.to_dict() for item in self.items],
             'total_items': len(self.items),
             'total_ingredients': sum(item.quantite for item in self.items),
-            'prix_total': round(sum(item.quantite * item.ingredient_item.prix_unitaire for item in self.items), 2)
+            'prix_total': round(prix_total, 2)
         }
     
 class ShoppingListItem(db.Model):
@@ -279,6 +297,6 @@ class ShoppingListItem(db.Model):
             'quantite': self.quantite,
             'unite': ing.unite,
             'est_achete': self.est_achete,
-            'prix_estime': round(self.quantite * ing.prix_unitaire, 2),
+            'prix_estime': round(self.quantite * ing.prix_unitaire, 2) if ing.prix_unitaire is not None else None,
             'date_ajout': self.date_ajout.isoformat()
         }

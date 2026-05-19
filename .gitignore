@@ -1,0 +1,32 @@
+# Local environment
+.env
+.env.example
+.env.local
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Flask / local app data
+instance/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Frontend
+node_modules/
+dist/
+build/
+coverage/
+instance/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

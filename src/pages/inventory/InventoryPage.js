@@ -5,10 +5,10 @@ import { useAuth } from '../../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Box, Container, Typography, Button, Grid, Card, CardContent,
-  CardActions, TextField, IconButton, Tooltip, Chip, Paper,
+  CardActions, CardActionArea, TextField, IconButton, Tooltip, Chip, Paper,
   CircularProgress, Dialog, DialogTitle, DialogContent, DialogActions
 } from '@mui/material';
-import { Add, Search, Delete, Edit, FilterList, Inventory } from '@mui/icons-material';
+import { Add, Search, Delete, Edit, FilterList, Inventory, Visibility } from '@mui/icons-material';
 
 const InventoryPage = () => {
   const [inventories, setInventories] = useState([]);
@@ -60,6 +60,10 @@ const InventoryPage = () => {
 
   const handleAddInventory = () => {
     navigate('/inventaires/nouveau');
+  };
+
+  const handleViewInventory = (inventoryId) => {
+    navigate(`/inventaires/${inventoryId}`);
   };
 
   if (loading) {
@@ -138,29 +142,36 @@ const InventoryPage = () => {
                     whileHover={{ scale: 1.03 }}
                   >
                     <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-                      <CardContent sx={{ flexGrow: 1 }}>
-                        <Typography variant="h6" component="h2" sx={{ mb: 1 }}>
-                          {inventory.nom}
-                        </Typography>
-                        
-                        <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                          <Chip 
-                            label={`${inventory.ingredients.length} ingrédients`} 
-                            size="small" 
-                            color="primary" 
-                            variant="outlined"
-                            sx={{ mr: 1 }}
-                          />
-                          <Typography variant="body2" color="text.secondary">
-                            {inventory.utilisateur_id === user?.id ? 'Votre inventaire' : 'Partagé'}
+                      <CardActionArea onClick={() => handleViewInventory(inventory.id)} sx={{ flexGrow: 1, alignItems: 'stretch' }}>
+                        <CardContent sx={{ flexGrow: 1 }}>
+                          <Typography variant="h6" component="h2" sx={{ mb: 1 }}>
+                            {inventory.nom}
                           </Typography>
-                        </Box>
-                        
-                        <Typography variant="caption" color="text.secondary">
-                          Créé le: {new Date(inventory.date_creation).toLocaleDateString()}
-                        </Typography>
-                      </CardContent>
+                          
+                          <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                            <Chip 
+                              label={`${inventory.ingredients_count ?? inventory.ingredients?.length ?? 0} ingrédient${(inventory.ingredients_count ?? inventory.ingredients?.length ?? 0) > 1 ? 's' : ''}`} 
+                              size="small" 
+                              color="primary" 
+                              variant="outlined"
+                              sx={{ mr: 1 }}
+                            />
+                            <Typography variant="body2" color="text.secondary">
+                              {inventory.utilisateur_id === user?.id ? 'Votre inventaire' : 'Partagé'}
+                            </Typography>
+                          </Box>
+                          
+                          <Typography variant="caption" color="text.secondary">
+                            Créé le: {new Date(inventory.date_creation).toLocaleDateString()}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
                       <CardActions sx={{ justifyContent: 'flex-end' }}>
+                        <Tooltip title="Voir">
+                          <IconButton onClick={() => handleViewInventory(inventory.id)}>
+                            <Visibility />
+                          </IconButton>
+                        </Tooltip>
                         <Tooltip title="Modifier">
                           <IconButton 
                             onClick={() => navigate(`/inventaires/${inventory.id}/modifier`)}
@@ -198,9 +209,9 @@ const InventoryPage = () => {
             <Typography>
               Êtes-vous sûr de vouloir supprimer l'inventaire "{inventoryToDelete?.nom}" ?
             </Typography>
-            {inventoryToDelete?.ingredients.length > 0 && (
+            {(inventoryToDelete?.ingredients_count ?? inventoryToDelete?.ingredients?.length ?? 0) > 0 && (
               <Typography color="error" sx={{ mt: 1 }}>
-                Attention : Cet inventaire contient {inventoryToDelete?.ingredients.length} ingrédients.
+                Attention : Cet inventaire contient {inventoryToDelete?.ingredients_count ?? inventoryToDelete?.ingredients?.length ?? 0} ingrédient{(inventoryToDelete?.ingredients_count ?? inventoryToDelete?.ingredients?.length ?? 0) > 1 ? 's' : ''}.
               </Typography>
             )}
           </DialogContent>

@@ -6,9 +6,10 @@ import {
   Box, Container, Typography, Button, Grid, Card, CardContent,
   CardHeader, Divider, Chip, IconButton, Tooltip, List, ListItem,
   ListItemText, Avatar, Paper, CircularProgress, Dialog, DialogTitle,
-  DialogContent, DialogActions, TextField
+  DialogContent, DialogActions, TextField, Autocomplete
 } from '@mui/material';
 import { Edit, Delete, ArrowBack, Restaurant, LocalGroceryStore } from '@mui/icons-material';
+import { MEASUREMENT_UNITS } from '../../utils/measurementUnits';
 
 const IngredientDetailPage = () => {
   const { id } = useParams();
@@ -21,8 +22,9 @@ const IngredientDetailPage = () => {
   const [editData, setEditData] = useState({
     nom: '',
     unite: '',
-    prix_unitaire: 0
+    prix_unitaire: ''
   });
+  const unitOptions = MEASUREMENT_UNITS;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +37,7 @@ const IngredientDetailPage = () => {
         setEditData({
           nom: ingredientResponse.data.nom,
           unite: ingredientResponse.data.unite,
-          prix_unitaire: ingredientResponse.data.prix_unitaire
+          prix_unitaire: ingredientResponse.data.prix_unitaire ?? ''
         });
         
         // Filter recipes that use this ingredient
@@ -66,8 +68,17 @@ const IngredientDetailPage = () => {
 
   const handleUpdate = async () => {
     try {
-      await ingredientService.update(id, editData);
-      setIngredient(prev => ({ ...prev, ...editData }));
+      const payload = {
+        nom: editData.nom,
+        unite: editData.unite
+      };
+      const priceValue = editData.prix_unitaire === '' ? null : Number(editData.prix_unitaire);
+      if (Number.isFinite(priceValue)) {
+        payload.prix_unitaire = priceValue;
+      }
+
+      await ingredientService.update(id, payload);
+      setIngredient(prev => ({ ...prev, ...payload }));
       setEditing(false);
     } catch (error) {
       console.error('Failed to update ingredient', error);
@@ -135,19 +146,27 @@ const IngredientDetailPage = () => {
                       onChange={(e) => setEditData({...editData, nom: e.target.value})}
                       sx={{ mb: 2 }}
                     />
-                    <TextField
-                      fullWidth
-                      label="Unité"
-                      value={editData.unite}
-                      onChange={(e) => setEditData({...editData, unite: e.target.value})}
-                      sx={{ mb: 2 }}
+                    <Autocomplete
+                      freeSolo
+                      options={unitOptions}
+                      value={editData.unite || ''}
+                      onChange={(event, value) => setEditData({...editData, unite: value || ''})}
+                      onInputChange={(event, value) => setEditData({...editData, unite: value})}
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          fullWidth
+                          label="Unité"
+                          sx={{ mb: 2 }}
+                        />
+                      )}
                     />
                     <TextField
                       fullWidth
-                      label="Prix unitaire"
+                      label="Prix unitaire (optionnel)"
                       type="number"
                       value={editData.prix_unitaire}
-                      onChange={(e) => setEditData({...editData, prix_unitaire: parseFloat(e.target.value)})}
+                      onChange={(e) => setEditData({...editData, prix_unitaire: e.target.value})}
                       InputProps={{
                         endAdornment: '€',
                       }}
@@ -181,7 +200,7 @@ const IngredientDetailPage = () => {
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                       <Restaurant sx={{ mr: 1, color: 'text.secondary' }} />
                       <Typography variant="body1">
-                        <strong>Prix unitaire:</strong> {ingredient.prix_unitaire} €
+                        <strong>Prix unitaire:</strong> {ingredient.prix_unitaire ?? 'Non renseigné'}
                       </Typography>
                     </Box>
                     

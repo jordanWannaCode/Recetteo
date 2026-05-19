@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import {
@@ -6,7 +7,7 @@ import {
   CardActions, useTheme, useMediaQuery, Divider, Chip
 } from '@mui/material';
 import { 
-  Restaurant, LocalGroceryStore, ShoppingCart, ListAlt 
+  Restaurant, LocalGroceryStore, ShoppingCart, ListAlt
 } from '@mui/icons-material';
 
 const HomePage = () => {
@@ -18,22 +19,26 @@ const HomePage = () => {
     {
       icon: <Restaurant fontSize="large" color="primary" />,
       title: "Gestion de recettes",
-      description: "Créez, modifiez et organisez vos recettes favorites. Accédez à toutes vos créations en un seul endroit."
+      description: "Créez, modifiez et consultez vos recettes. Chaque recette peut être détaillée et enrichie avec ses ingrédients.",
+      route: "/recettes"
+    },
+    {
+      icon: <ListAlt fontSize="large" color="primary" />,
+      title: "Catalogue d'ingrédients",
+      description: "Ajoutez, modifiez et consultez les ingrédients disponibles pour construire vos recettes et vos inventaires.",
+      route: "/ingredients"
     },
     {
       icon: <LocalGroceryStore fontSize="large" color="primary" />,
-      title: "Inventaire d'ingrédients",
-      description: "Suivez vos stocks d'ingrédients et ne manquez plus jamais rien pour préparer vos plats préférés."
+      title: "Inventaires",
+      description: "Suivez vos stocks, consultez le détail d'un inventaire et mettez à jour les quantités ingrédient par ingrédient.",
+      route: "/inventaires"
     },
     {
       icon: <ShoppingCart fontSize="large" color="primary" />,
       title: "Listes de courses",
-      description: "Générez automatiquement des listes de courses basées sur vos recettes et votre inventaire."
-    },
-    {
-      icon: <ListAlt fontSize="large" color="primary" />,
-      title: "Planification de repas",
-      description: "Organisez vos repas à l'avance et simplifiez votre routine culinaire au quotidien."
+      description: "Créez des listes manuellement ou générez-les automatiquement à partir d'une recette et d'un inventaire.",
+      route: "/liste-courses"
     }
   ];
 
@@ -83,7 +88,8 @@ const HomePage = () => {
                 variant="contained" 
                 color="secondary" 
                 size="large"
-                href="/register"
+                component={RouterLink}
+                to="/register"
                 sx={{ 
                   px: 4, 
                   py: 1.5,
@@ -96,7 +102,8 @@ const HomePage = () => {
                 variant="outlined" 
                 color="inherit" 
                 size="large"
-                href="/login"
+                component={RouterLink}
+                to="/login"
                 sx={{ 
                   px: 4, 
                   py: 1.5,
@@ -172,23 +179,38 @@ const HomePage = () => {
                     <Typography variant="body1">
                       {feature.description}
                     </Typography>
+                    {!user && (
+                      <Chip
+                        label="Connexion requise"
+                        size="small"
+                        variant="outlined"
+                        sx={{ mt: 2 }}
+                      />
+                    )}
                   </CardContent>
-                  {user && (
-                    <CardActions sx={{ justifyContent: 'center', pb: 3 }}>
+                  <CardActions sx={{ justifyContent: 'center', pb: 3 }}>
+                    {user ? (
                       <Button 
                         variant="outlined" 
                         color="primary"
                         size="small"
-                        href={
-                          index === 0 ? '/recettes' :
-                          index === 1 ? '/inventaires' :
-                          index === 2 ? '/liste-courses' : '/'
-                        }
+                        component={RouterLink}
+                        to={feature.route}
                       >
-                        Essayer maintenant
+                        Ouvrir
                       </Button>
-                    </CardActions>
-                  )}
+                    ) : (
+                      <Button
+                        variant="outlined"
+                        color="primary"
+                        size="small"
+                        component={RouterLink}
+                        to="/register"
+                      >
+                        Créer un compte
+                      </Button>
+                    )}
+                  </CardActions>
                 </Card>
               </motion.div>
             </Grid>
@@ -229,7 +251,8 @@ const HomePage = () => {
               variant="contained" 
               color="primary" 
               size="large"
-              href="/register"
+              component={RouterLink}
+              to="/register"
               sx={{ 
                 px: 6, 
                 py: 1.5,
@@ -272,14 +295,15 @@ const HomePage = () => {
             mb: 3
           }}
         >
-          Consultez notre centre d'aide ou contactez notre équipe de support.
+          Consultez le centre d&apos;aide pour retrouver les parcours actuellement disponibles et les points d&apos;entrée utiles.
         </Typography>
         <Button 
           variant="outlined" 
           color="primary"
-          href="#"
+          component={RouterLink}
+          to="/aide"
         >
-          Contactez-nous
+          Ouvrir le centre d'aide
         </Button>
       </Box>
     </Container>

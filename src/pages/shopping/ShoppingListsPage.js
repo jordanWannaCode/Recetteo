@@ -37,14 +37,25 @@ const ShoppingListsPage = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
 
+  const refreshLists = async () => {
+    const response = await shoppingService.getLists();
+    setLists(response.data.listes_courses || []);
+    return response.data.listes_courses || [];
+  };
+
+  const refreshSelectedList = async (listId) => {
+    const response = await shoppingService.getList(listId);
+    setSelectedList(response.data);
+    return response.data;
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
         setLoading(true);
         
         // Fetch shopping lists
-        const listsResponse = await shoppingService.getLists();
-        setLists(listsResponse.data.listes_courses);
+        await refreshLists();
         
         // Fetch recipes, inventories and ingredients if user wants to generate a list
         if (user) {
@@ -70,8 +81,8 @@ const ShoppingListsPage = () => {
 
   const handleCreateList = async () => {
     try {
-      const response = await shoppingService.createList();
-      setLists([...lists, response.data.liste_courses]);
+      await shoppingService.createList();
+      await refreshLists();
     } catch (error) {
       console.error('Failed to create list', error);
     }
@@ -80,7 +91,7 @@ const ShoppingListsPage = () => {
   const handleDeleteList = async (id) => {
     try {
       await shoppingService.deleteList(id);
-      setLists(lists.filter(list => list.id !== id));
+      await refreshLists();
       if (selectedList && selectedList.id === id) {
         setSelectedList(null);
       }
@@ -98,13 +109,8 @@ const ShoppingListsPage = () => {
         itemId, 
         { est_achete: isChecked }
       );
-      
-      setSelectedList({
-        ...selectedList,
-        items: selectedList.items.map(item => 
-          item.id === itemId ? { ...item, est_achete: isChecked } : item
-        )
-      });
+      await refreshLists();
+      await refreshSelectedList(selectedList.id);
     } catch (error) {
       console.error('Failed to update item', error);
     }
@@ -115,12 +121,11 @@ const ShoppingListsPage = () => {
     
     try {
       setGenerating(true);
-      const response = await shoppingService.generateList(
+      await shoppingService.generateList(
         generateData.recipeId,
         generateData.inventoryId
       );
-      
-      setLists([...lists, response.data.liste_courses]);
+      await refreshLists();
       setOpenGenerateDialog(false);
       setGenerateData({ recipeId: '', inventoryId: '' });
     } catch (error) {
@@ -150,10 +155,8 @@ const ShoppingListsPage = () => {
           quantite: newItem.quantity
         }
       );
-      
-      // Refresh the list
-      const response = await shoppingService.getList(selectedList.id);
-      setSelectedList(response.data);
+      await refreshLists();
+      await refreshSelectedList(selectedList.id);
       setNewItemDialog(false);
       setNewItem({ ingredientId: '', quantity: 1 });
     } catch (error) {
@@ -163,6 +166,10 @@ const ShoppingListsPage = () => {
 
   const handleUpdateItemQuantity = async (itemId, newQuantity) => {
     if (!selectedList) return;
+
+    if (!Number.isFinite(newQuantity) || newQuantity <= 0) {
+      return;
+    }
     
     try {
       await shoppingService.updateItem(
@@ -170,13 +177,8 @@ const ShoppingListsPage = () => {
         itemId,
         { quantite: newQuantity }
       );
-      
-      setSelectedList({
-        ...selectedList,
-        items: selectedList.items.map(item => 
-          item.id === itemId ? { ...item, quantite: newQuantity } : item
-        )
-      });
+      await refreshLists();
+      await refreshSelectedList(selectedList.id);
     } catch (error) {
       console.error('Failed to update item quantity', error);
     }
@@ -187,10 +189,8 @@ const ShoppingListsPage = () => {
     
     try {
       await shoppingService.deleteItem(selectedList.id, itemId);
-      setSelectedList({
-        ...selectedList,
-        items: selectedList.items.filter(item => item.id !== itemId)
-      });
+      await refreshLists();
+      await refreshSelectedList(selectedList.id);
     } catch (error) {
       console.error('Failed to remove item', error);
     }
@@ -328,7 +328,11 @@ const ShoppingListsPage = () => {
                       
                       <ListItemText
                         primary={item.ingredient_nom}
-                        secondary={`Prix unitaire: ${item.ingredient_item?.prix_unitaire.toFixed(2)} €/${item.unite}`}
+                        secondary={
+                          item.prix_estime !== null && typeof item.prix_estime !== 'undefined' && item.quantite > 0
+                            ? `Prix unitaire: ${(item.prix_estime / item.quantite).toFixed(2)} €/${item.unite}`
+                            : `Prix unitaire: N/A${item.unite ? `/${item.unite}` : ''}`
+                        }
                         sx={{ 
                           textDecoration: item.est_achete ? 'line-through' : 'none',
                           color: item.est_achete ? 'text.secondary' : 'text.primary'
@@ -339,15 +343,18 @@ const ShoppingListsPage = () => {
                         type="number"
                         size="small"
                         value={item.quantite}
-                        onChange={(e) => handleUpdateItemQuantity(item.id, parseFloat(e.target.value))}
+                        onChange={(e) => handleUpdateItemQuantity(item.id, Number.parseFloat(e.target.value))}
                         sx={{ width: 100, mr: 2 }}
                         InputProps={{
                           endAdornment: item.unite,
+                          inputProps: { min: 0.1, step: 0.1 }
                         }}
                       />
                       
                       <Typography variant="body1" sx={{ mr: 2 }}>
-                        {item.prix_estime.toFixed(2)} €
+                        {item.prix_estime !== null && typeof item.prix_estime !== 'undefined'
+                          ? `${item.prix_estime.toFixed(2)} €`
+                          : 'N/A'}
                       </Typography>
                       
                       <Tooltip title="Supprimer">
