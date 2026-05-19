@@ -13,7 +13,7 @@ from validation import (
     validate_profile_payload,
     validate_password_change_payload
 )
-from uploads import validate_image_upload
+from uploads import validate_image_upload, upload_to_cloudinary
 
 auth_bp = Blueprint('auth', __name__)
 logger = logging.getLogger(__name__)
@@ -24,6 +24,11 @@ AUTH_WINDOW_SECONDS = 900
 
 def _save_image(file_storage, subdir):
     ext = validate_image_upload(file_storage, current_app.config.get('ALLOWED_IMAGE_EXTENSIONS', set()))
+
+    cloud_url = upload_to_cloudinary(file_storage, f"recetteo/{subdir}")
+    if cloud_url:
+        return cloud_url
+
     unique_name = f"{uuid.uuid4().hex}.{ext}"
     upload_dir = os.path.join(current_app.config['UPLOAD_FOLDER'], subdir)
     os.makedirs(upload_dir, exist_ok=True)

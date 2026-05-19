@@ -5,6 +5,12 @@ from werkzeug.utils import secure_filename
 
 from validation import ValidationError
 
+try:
+    import cloudinary
+    import cloudinary.uploader
+except ImportError:  # Cloudinary est optionnel (dev local)
+    cloudinary = None
+
 
 def _detect_image_type(header: bytes) -> str | None:
     if len(header) >= 3 and header[:3] == b"\xFF\xD8\xFF":
@@ -40,3 +46,19 @@ def validate_image_upload(file_storage, allowed_exts: Iterable[str]) -> str:
         raise ValidationError("Fichier image invalide")
 
     return ext
+
+
+def upload_to_cloudinary(file_storage, folder: str) -> str | None:
+    cloudinary_url = os.environ.get("CLOUDINARY_URL")
+    if not cloudinary_url:
+        return None
+    if cloudinary is None:
+        raise ValidationError("Cloudinary non disponible")
+
+    cloudinary.config(cloudinary_url=cloudinary_url)
+    result = cloudinary.uploader.upload(
+        file_storage,
+        folder=folder,
+        resource_type="image",
+    )
+    return result.get("secure_url")
