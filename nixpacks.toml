@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ["python310"]
-
-[phases.install]
-cmds = ["pip install -r backend/requirements.txt"]
-
-[phases.start]
-cmd = "gunicorn backend.app:app --bind 0.0.0.0:$PORT"
