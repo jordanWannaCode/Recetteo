@@ -6,15 +6,13 @@ import {
   Box, Container, Typography, TextField, Button, Grid, 
   Paper, Avatar, FormControlLabel, Checkbox, InputAdornment, IconButton
 } from '@mui/material';
-import { Visibility } from '@mui/icons-material/Visibility';
-import { VisibilityOff } from '@mui/icons-material/VisibilityOff';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
 import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';,
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-const [showPassword, setShowPassword] = useState(false);
-const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 const schema = yup.object().shape({
   nom_utilisateur: yup.string()
     .required('Le nom d\'utilisateur est requis')
@@ -25,11 +23,7 @@ const schema = yup.object().shape({
     .email('Veuillez entrer un email valide'),
   mot_de_passe: yup.string()
     .required('Le mot de passe est requis')
-    .min(8, 'Le mot de passe doit contenir au moins 8 caractères')
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,128}$/,
-      'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial parmi !@#$%^&*'
-    ),
+    .min(8, 'Le mot de passe doit contenir au moins 8 caractères'),
   confirmPassword: yup.string()
     .oneOf([yup.ref('mot_de_passe'), null], 'Les mots de passe doivent correspondre')
     .required('La confirmation du mot de passe est requise'),
@@ -40,6 +34,8 @@ const schema = yup.object().shape({
 const RegisterPage = () => {
   const { register: registerUser } = useAuth();
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 

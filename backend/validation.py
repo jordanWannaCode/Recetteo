@@ -11,7 +11,7 @@ EMAIL_RE = re.compile(r"^[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Z
 SAFE_NAME_RE = re.compile(r"^[A-Za-zÀ-ÿ0-9][A-Za-zÀ-ÿ0-9\s'(),._:-]{0,119}$")
 SAFE_UNIT_RE = re.compile(r"^[A-Za-zÀ-ÿ0-9/%.\-\s]{1,20}$")
 SAFE_TEXT_RE = re.compile(r"^[A-Za-zÀ-ÿŒœ0-9\s.,;:!?()'\"%+\-_/&’“”°€–—]{1,2000}$")
-PASSWORD_RE = re.compile(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,128}$")
+PASSWORD_RE = re.compile(r"^.{8,128}$")
 
 
 def get_json_object(payload: Any) -> dict:
@@ -57,7 +57,7 @@ def _get_password(data: dict, field: str) -> str:
     value = _get_string(data, field, min_len=8, max_len=128)
     if not PASSWORD_RE.fullmatch(value):
         raise ValidationError(
-            "Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractere special"
+            "Le mot de passe doit contenir au moins 8 caracteres"
         )
     return value
 
