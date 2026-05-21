@@ -64,126 +64,97 @@ const Navbar = () => {
     <Slide appear={false} direction="down" in={!useScrollTrigger()}>
       <AppBar position="sticky" elevation={1} color="default">
         <Container maxWidth="lg">
-          <Toolbar disableGutters>
-            {/* Logo */}
-            <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>
-              <Typography 
-                variant="h6" 
-                component={Link} 
-                to="/" 
-                sx={{ 
-                  textDecoration: 'none', 
-                  color: 'inherit',
-                  fontWeight: 700,
-                  display: 'flex',
-                  alignItems: 'center'
-                }}
-              >
-                <motion.div
-                  whileHover={{ rotate: 20 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
-                >
-                  <Avatar 
-                    src="/logo.png" 
-                    alt="Logo" 
-                    sx={{ 
-                      width: 40, 
-                      height: 40, 
-                      mr: 1,
-                      bgcolor: 'primary.main'
-                    }}
-                  />
-                </motion.div>
-                Recetteo
-              </Typography>
-            </Box>
-            
-            {/* Navigation principale (masquée pendant la recherche) */}
+          <Toolbar disableGutters sx={{ gap: 1 }}>
+
+            {/* ── Logo ── */}
+            <Typography
+              variant="h6"
+              component={Link}
+              to="/"
+              sx={{
+                textDecoration: 'none',
+                color: 'inherit',
+                fontWeight: 700,
+                display: 'flex',
+                alignItems: 'center',
+                flexShrink: 0,
+                mr: { xs: 0, md: 2 },
+              }}
+            >
+              <motion.div whileHover={{ rotate: 20 }} transition={{ type: 'spring', stiffness: 300 }}>
+                <Avatar
+                  src="/logo.png"
+                  alt="Logo"
+                  sx={{ width: 36, height: 36, mr: 1, bgcolor: 'primary.main' }}
+                />
+              </motion.div>
+              <Box component="span" sx={{ display: { xs: 'none', sm: 'inline' } }}>Recetteo</Box>
+            </Typography>
+
+            {/* ── Navigation desktop (pousse les actions à droite) ── */}
             {!searchOpen && (
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, ml: 3 }}>
-                <Button component={Link} to="/recettes" sx={{ mx: 1, color: 'text.primary' }}>
-                  Recettes
-                </Button>
-                <Button component={Link} to="/ingredients" sx={{ mx: 1, color: 'text.primary' }}>
-                  Ingrédients
-                </Button>
-                <Button component={Link} to="/inventaires" sx={{ mx: 1, color: 'text.primary' }}>
-                  Inventaires
-                </Button>
-                <Button component={Link} to="/liste-courses" sx={{ mx: 1, color: 'text.primary' }}>
-                  Liste de courses
-                </Button>
+              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
+                <Button component={Link} to="/recettes" sx={{ color: 'text.primary' }}>Recettes</Button>
+                <Button component={Link} to="/ingredients" sx={{ color: 'text.primary' }}>Ingrédients</Button>
+                <Button component={Link} to="/inventaires" sx={{ color: 'text.primary' }}>Inventaires</Button>
+                <Button component={Link} to="/liste-courses" sx={{ color: 'text.primary' }}>Liste de courses</Button>
               </Box>
             )}
 
-            {/* Barre de recherche (affichée quand active) */}
+            {/* Spacer mobile (quand les liens sont cachés) */}
+            {!searchOpen && <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} />}
+
+            {/* ── Barre de recherche étendue ── */}
             {searchOpen && (
               <ClickAwayListener onClickAway={handleSearchClose}>
-                <Box 
-                  component="form" 
+                <Box
+                  component="form"
                   onSubmit={handleSearchSubmit}
-                  sx={{ 
-                    flexGrow: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    ml: { xs: 1, md: 3 },
-                    mr: 2
-                  }}
+                  sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', mx: 1 }}
                 >
                   <TextField
                     autoFocus
                     fullWidth
+                    size="small"
                     variant="outlined"
                     placeholder="Rechercher des recettes, ingrédients..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <Search />
-                        </InputAdornment>
-                      ),
-                      endAdornment: (
-                        <>
-                          {searchQuery && (
-                            <IconButton size="small" onClick={() => setSearchQuery('')}>
-                              <Close fontSize="small" />
-                            </IconButton>
-                          )}
-                        </>
-                      ),
-                      sx: {
-                        backgroundColor: 'background.paper',
-                        borderRadius: 1
-                      }
+                      startAdornment: <InputAdornment position="start"><Search /></InputAdornment>,
+                      endAdornment: searchQuery
+                        ? <IconButton size="small" onClick={() => setSearchQuery('')}><Close fontSize="small" /></IconButton>
+                        : null,
+                      sx: { backgroundColor: 'background.paper', borderRadius: 1 },
                     }}
                   />
                 </Box>
               </ClickAwayListener>
             )}
-            
-            {/* Actions utilisateur */}
-            <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-              {/* Icône recherche (masquée pendant la recherche) */}
+
+            {/* ── Actions côté droit ── */}
+            <Box sx={{ display: 'flex', alignItems: 'center', flexShrink: 0, gap: 0.5 }}>
+
+              {/* Icône recherche */}
               {!searchOpen && (
-                <IconButton sx={{ mx: 1 }} onClick={handleSearchClick}>
+                <IconButton onClick={handleSearchClick}>
                   <Search />
                 </IconButton>
               )}
-              
-              {/* Menu utilisateur (connecté) */}
+
+              {/* Connecté : avatar + menu profil */}
               {user ? (
                 <>
-                  {!searchOpen && (
-                    <IconButton onClick={handleMenuOpen} sx={{ ml: 1 }}>
-                      <Avatar 
-                        alt={user.nom_utilisateur} 
-                        src={user.avatar || "/avatar.jpg"} 
-                        sx={{ width: 36, height: 36 }}
-                      />
-                    </IconButton>
-                  )}
-                  
+                  <IconButton onClick={handleMenuOpen} sx={{ p: 0.5 }}>
+                    <Avatar
+                      alt={user.nom_utilisateur}
+                      src={user.avatar_url || undefined}
+                      sx={{ width: 36, height: 36, bgcolor: 'primary.main' }}
+                    >
+                      {!user.avatar_url && user.nom_utilisateur?.[0]?.toUpperCase()}
+                    </Avatar>
+                  </IconButton>
+
                   <Menu
                     anchorEl={anchorEl}
                     open={Boolean(anchorEl)}
@@ -211,7 +182,11 @@ const Navbar = () => {
                     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                   >
-                    <MenuItem onClick={() => navigate('/profile')}>
+                    <MenuItem disabled sx={{ opacity: 1 }}>
+                      <Typography variant="subtitle2" fontWeight={700}>{user.nom_utilisateur}</Typography>
+                    </MenuItem>
+                    <Divider />
+                    <MenuItem onClick={() => { handleMenuClose(); navigate('/profile'); }}>
                       <AccountCircle sx={{ mr: 1.5 }} /> Mon profil
                     </MenuItem>
                     <Divider />
@@ -221,38 +196,27 @@ const Navbar = () => {
                   </Menu>
                 </>
               ) : (
-                /* Boutons connexion (non connecté) */
+                /* Non connecté : boutons login/register (desktop) */
                 !searchOpen && (
-                  <>
-                    <Button 
-                      component={Link} 
-                      to="/login" 
-                      variant="outlined" 
-                      sx={{ mx: 1 }}
-                    >
-                      Connexion
-                    </Button>
-                    <Button 
-                      component={Link} 
-                      to="/register" 
-                      variant="contained" 
-                      sx={{ ml: 1 }}
-                    >
-                      Inscription
-                    </Button>
-                  </>
+                  <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1 }}>
+                    <Button component={Link} to="/login" variant="outlined" size="small">Connexion</Button>
+                    <Button component={Link} to="/register" variant="contained" size="small">Inscription</Button>
+                  </Box>
                 )
               )}
-              
+
+              {/* Hamburger mobile */}
               {!searchOpen && (
-                <IconButton 
-                  sx={{ display: { md: 'none' }, ml: 1 }}
+                <IconButton
+                  sx={{ display: { md: 'none' } }}
                   onClick={handleMobileMenuOpen}
+                  aria-label="menu"
                 >
                   <MenuIcon />
                 </IconButton>
               )}
             </Box>
+
           </Toolbar>
         </Container>
         
