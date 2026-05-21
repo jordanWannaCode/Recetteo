@@ -1,4 +1,5 @@
 import os
+from urllib.parse import urlparse
 from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
@@ -44,6 +45,55 @@ def create_app(config_class=Config):
             }
         },
     )
+
+    def _startup_diagnostics():
+        enabled = os.environ.get('STARTUP_DIAGNOSTICS', '').lower() in ('1', 'true', 'yes')
+        if not enabled:
+            return
+
+        app.logger.info("Startup diagnostics: begin")
+        for key in ('SECRET_KEY', 'JWT_SECRET_KEY', 'DATABASE_URI'):
+            app.logger.info("Env %s set: %s", key, 'yes' if os.environ.get(key) else 'no')
+
+        db_uri = os.environ.get('DATABASE_URI', '')
+        if db_uri:
+            parsed = urlparse(db_uri)
+            db_name = parsed.path.lstrip('/') if parsed.path else ''
+            app.logger.info(
+                "DB target: scheme=%s host=%s port=%s db=%s",
+                parsed.scheme or 'n/a',
+                parsed.hostname or 'n/a',
+                parsed.port or 'n/a',
+                db_name or 'n/a',
+            )
+        else:
+            app.logger.info("DB target: missing")
+
+        cors = app.config.get('CORS_ORIGINS') or []
+        app.logger.info("CORS origins: %s", ','.join(cors) if cors else 'none')
+
+        cloud_url = os.environ.get('CLOUDINARY_URL')
+        if not cloud_url:
+            cloud_status = 'not-set'
+        elif cloud_url.startswith('cloudinary://'):
+            cloud_status = 'ok'
+        else:
+            cloud_status = 'invalid-scheme'
+        app.logger.info("Cloudinary URL: %s", cloud_status)
+
+        db_check = os.environ.get('STARTUP_DB_CHECK', '').lower() in ('1', 'true', 'yes')
+        if db_check:
+            try:
+                from sqlalchemy import text
+                with app.app_context():
+                    db.session.execute(text('SELECT 1'))
+                app.logger.info("DB check: ok")
+            except Exception as exc:
+                app.logger.error("DB check: failed (%s)", exc)
+
+        app.logger.info("Startup diagnostics: end")
+
+    _startup_diagnostics()
     
     upload_root = app.config['UPLOAD_FOLDER']
     os.makedirs(os.path.join(upload_root, 'avatars'), exist_ok=True)
@@ -94,6 +144,10 @@ def create_app(config_class=Config):
     @app.route('/uploads/<path:filename>')
     def uploaded_file(filename):
         return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
+    @app.route('/api/health')
+    def health():
+        return jsonify({"status": "ok"}), 200
     
     return app
 
