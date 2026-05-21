@@ -62,9 +62,16 @@ def create_app(config_class=Config):
     app.register_blueprint(inventaires_bp, url_prefix='/api/inventaires')
     app.register_blueprint(shopping_bp, url_prefix='/api/shopping')
     
-    # Création des tables si elles n'existent pas
-    with app.app_context():
-        db.create_all()
+    auto_create_env = os.environ.get('AUTO_CREATE_DB')
+    if auto_create_env is None:
+        should_create = os.environ.get('FLASK_ENV', '').lower() == 'development'
+    else:
+        should_create = auto_create_env.lower() in ('1', 'true', 'yes')
+
+    if should_create:
+        # Création des tables si elles n'existent pas (dev uniquement sauf override)
+        with app.app_context():
+            db.create_all()
     
     def _spa_fallback(path):
         if path.startswith('api/') or path.startswith('uploads/'):
