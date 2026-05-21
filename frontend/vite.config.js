@@ -19,6 +19,9 @@ export default defineConfig({
       },
     },
   },
+  preview: {
+    allowedHosts: ['recetteo-frontend.up.railway.app'],
+  },
   esbuild: {
     loader: 'jsx',
     include: /src\/.*\.jsx?$/,
