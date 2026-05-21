@@ -4,13 +4,17 @@ import { useAuth } from '../../context/AuthContext';
 import { motion } from 'framer-motion';
 import { 
   Box, Container, Typography, TextField, Button, Grid, 
-  Paper, Avatar, FormControlLabel, Checkbox 
+  Paper, Avatar, FormControlLabel, Checkbox, InputAdornment, IconButton
 } from '@mui/material';
+import { Visibility } from '@mui/icons-material/Visibility';
+import { VisibilityOff } from '@mui/icons-material/VisibilityOff';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
 import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from '@hookform/resolvers/yup';,
 import * as yup from 'yup';
 
+const [showPassword, setShowPassword] = useState(false);
+const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 const schema = yup.object().shape({
   nom_utilisateur: yup.string()
     .required('Le nom d\'utilisateur est requis')
@@ -23,8 +27,8 @@ const schema = yup.object().shape({
     .required('Le mot de passe est requis')
     .min(8, 'Le mot de passe doit contenir au moins 8 caractères')
     .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/,
-      'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial'
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,128}$/,
+      'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial parmi !@#$%^&*'
     ),
   confirmPassword: yup.string()
     .oneOf([yup.ref('mot_de_passe'), null], 'Les mots de passe doivent correspondre')
@@ -149,11 +153,24 @@ const RegisterPage = () => {
                   fullWidth
                   name="mot_de_passe"
                   label="Mot de passe"
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   id="mot_de_passe"
                   autoComplete="new-password"
                   error={!!errors.mot_de_passe}
                   helperText={errors.mot_de_passe?.message}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowPassword((v) => !v)}
+                          edge="end"
+                          aria-label="Afficher le mot de passe"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               )}
             />
@@ -169,10 +186,23 @@ const RegisterPage = () => {
                   fullWidth
                   name="confirmPassword"
                   label="Confirmer le mot de passe"
-                  type="password"
+                  type={showConfirmPassword ? 'text' : 'password'}
                   id="confirmPassword"
                   error={!!errors.confirmPassword}
                   helperText={errors.confirmPassword?.message}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowConfirmPassword((v) => !v)}
+                          edge="end"
+                          aria-label="Afficher le mot de passe"
+                        >
+                          {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               )}
             />

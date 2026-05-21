@@ -24,8 +24,8 @@ const passwordSchema = yup.object().shape({
     .required('Le nouveau mot de passe est requis')
     .min(8, 'Le mot de passe doit contenir au moins 8 caractères')
     .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/,
-      'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial'
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,128}$/,
+      'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial parmi !@#$%^&*'
     ),
   confirmPassword: yup.string()
     .oneOf([yup.ref('newPassword'), null], 'Les mots de passe doivent correspondre')
