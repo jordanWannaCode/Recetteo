@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'; // Adjust the import path as necessary
 import { motion } from 'framer-motion';
 import { Box, Container, Typography, TextField, Button, Link, Grid, Paper, Avatar } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 const LoginPage = () => {
@@ -81,7 +82,7 @@ const LoginPage = () => {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/register" variant="body2">
+                <Link component={RouterLink} to="/register" variant="body2">
                   Pas encore de compte ? S'inscrire
                 </Link>
               </Grid>
