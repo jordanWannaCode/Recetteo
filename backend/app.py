@@ -129,7 +129,7 @@ def create_app(config_class=Config):
 
         index_path = os.path.join(app.static_folder, 'index.html')
         if not os.path.exists(index_path):
-            return jsonify({"message": "Frontend non build (dist/index.html introuvable)"}), 404
+            return jsonify({"message": "API running", "docs": "/api/health"}), 200
 
         static_path = os.path.join(app.static_folder, path)
         if path and os.path.exists(static_path):
